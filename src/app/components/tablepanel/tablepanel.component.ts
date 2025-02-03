@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'app-tablepanel',
@@ -8,5 +8,18 @@ import { Component } from '@angular/core';
   styleUrl: './tablepanel.component.css'
 })
 export class TablepanelComponent {
+
+  @Input() id: number = 0;
+  @Input() usuario: string = '';
+  @Input() correo: string = '';
+  @Input() rol: string = '';
+
+  editar(id: number) {
+    console.log('Editar', id);
+  }
+
+  eliminar(id: number) {
+    console.log('Eliminar', id);
+  }
 
 }

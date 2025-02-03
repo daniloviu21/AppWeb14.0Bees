@@ -1,4 +1,23 @@
 <div class="main-content">
-    
+  <div style="margin: 15px;">
+    <table>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Usuario</th>
+                <th>Email</th>
+                <th>Rol</th>
+                <th>Acciones</th>
+            </tr>
+        </thead>
+        <tbody>
+            <app-tablepanel *ngFor="let management of users" 
+            [id]="management.id" 
+            [usuario]="management.usuario" 
+            [correo]="management.correo" 
+            [rol]="management.rol"></app-tablepanel>
+        </tbody>
+    </table>
+  </div>
 </div>
   <app-sidebar></app-sidebar>
