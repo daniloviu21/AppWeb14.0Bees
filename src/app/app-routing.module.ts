@@ -6,16 +6,16 @@ import { RegisterPageComponent } from './pages/register-page/register-page.compo
 import { UserComponent } from './pages/management/user/user.component';
 
 const routes: Routes = [
-  //localhost:4200
-  {path: '', component: HomeComponent},
+  // Redirigir al login cuando la ruta sea la raíz
+  { path: '', redirectTo: '/login', pathMatch: 'full' },
   //localhost:4200/home
-  {path: 'home', component: HomeComponent},
+  { path: 'home', component: HomeComponent },
   //localhost:4200/login
-  {path: 'login', component: LoginPageComponent},
+  { path: 'login', component: LoginPageComponent },
   //localhost:4200/register
-  {path: 'register', component: RegisterPageComponent},
+  { path: 'register', component: RegisterPageComponent },
   //localhost:4200/managementuser
-  {path: 'managementuser', component: UserComponent},
+  { path: 'managementuser', component: UserComponent },
 ];
 
 @NgModule({
