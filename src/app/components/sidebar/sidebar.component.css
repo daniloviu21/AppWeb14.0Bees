@@ -31,6 +31,10 @@
     margin: 0;
 }
 
+li {
+    cursor: pointer;
+}
+
 .sidebar ul li {
     padding: 8px 20px;
 }
