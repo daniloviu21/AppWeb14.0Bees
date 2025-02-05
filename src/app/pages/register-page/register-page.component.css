@@ -46,11 +46,20 @@ form {
     display: flex;
     flex-direction: column;
     gap: 10px;
+    padding: 20px;
+    border: 2px solid #007bff;
+    /* Borde azul */
+    border-radius: 10px;
+    /* Bordes redondeados */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    /* Sombra ligera */
+    background-color: #fff;
+    /* Fondo blanco */
 }
 
 input {
     padding: 10px;
-    width: 100%;
+    width: 90%;
     border: 1px solid #ccc;
     border-radius: 5px;
 }
