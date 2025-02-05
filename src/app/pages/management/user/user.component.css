@@ -3,3 +3,38 @@
     padding: 20px;
     min-height: 100vh;
 }
+
+.admin-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+    font-size: 18px;
+    text-align: left;
+  }
+  .admin-table th, .admin-table td {
+    padding: 12px 15px;
+    border: 1px solid #ddd;
+  }
+  .admin-table thead {
+    background-color: #f2f2f2;
+  }
+  .admin-table tr:nth-child(even) {
+    background-color: #f9f9f9;
+  }
+  .btn-edit, .btn-delete {
+    padding: 5px 10px;
+    margin: 0 5px;
+    border: none;
+    cursor: pointer;
+  }
+  .btn-edit {
+    background-color: #4CAF50;
+    color: white;
+  }
+  .btn-delete {
+    background-color: #f44336;
+    color: white;
+  }
+  .btn-edit:hover, .btn-delete:hover {
+    opacity: 0.8;
+  }

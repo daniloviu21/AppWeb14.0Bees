@@ -38,4 +38,11 @@ export class UserComponent {
 ];
 
 
+  editarUsuario(id: number) {
+    console.log('Edit user', id);
+  }
+
+  eliminarUsuario(id: number) {
+    console.log('Delete user', id);
+  }
 }
