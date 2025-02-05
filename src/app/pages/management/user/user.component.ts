@@ -45,4 +45,8 @@ export class UserComponent {
   eliminarUsuario(id: number) {
     console.log('Delete user', id);
   }
+
+  openModal(){
+    console.log('Open modal');
+  }
 }

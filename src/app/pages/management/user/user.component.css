@@ -28,8 +28,8 @@
     cursor: pointer;
   }
   .btn-edit {
-    background-color: #4CAF50;
-    color: white;
+    background-color: #ffc107;
+    color: rgb(0, 0, 0);
   }
   .btn-delete {
     background-color: #f44336;
@@ -38,3 +38,22 @@
   .btn-edit:hover, .btn-delete:hover {
     opacity: 0.8;
   }
+
+.addUser {
+    background-color: #077bff;
+    color: white;
+    padding: 7px 14px;
+    border-radius: 5px;
+    font-family: sans-serif;
+    font-size: 15px;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    text-align: center;
+}
+
+.material-symbols-outlined {
+    font-size: 20px;
+    margin: 0px 0px 0px 10px;
+}
