@@ -1,0 +1,30 @@
+<div class="main-content">
+  <div style="margin: 30px;">
+    <h1>Gestión Usuarios</h1>
+    <button class="addUser" (click)="openModal()">Crear usuario <span class="material-symbols-outlined">add</span></button>
+    <table class="admin-table">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Usuario</th>
+          <th>Email</th>
+          <th>Rol</th>
+          <th>Acciones</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let management of users">
+          <td>{{ management.id }}</td>
+          <td>{{ management.usuario }}</td>
+          <td>{{ management.correo }}</td>
+          <td>{{ management.rol }}</td>
+          <td>
+            <button class="btn-edit" (click)="editarUsuario(management.id)">Editar</button>
+            <button class="btn-delete" (click)="eliminarUsuario(management.id)">Eliminar</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+  <app-sidebar></app-sidebar>

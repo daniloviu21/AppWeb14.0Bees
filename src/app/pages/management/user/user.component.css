@@ -1,0 +1,59 @@
+.main-content {
+    margin-left: 250px;
+    padding: 20px;
+    min-height: 100vh;
+}
+
+.admin-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+    font-size: 18px;
+    text-align: left;
+  }
+  .admin-table th, .admin-table td {
+    padding: 12px 15px;
+    border: 1px solid #ddd;
+  }
+  .admin-table thead {
+    background-color: #f2f2f2;
+  }
+  .admin-table tr:nth-child(even) {
+    background-color: #f9f9f9;
+  }
+  .btn-edit, .btn-delete {
+    padding: 5px 10px;
+    margin: 0 5px;
+    border: none;
+    cursor: pointer;
+  }
+  .btn-edit {
+    background-color: #ffc107;
+    color: rgb(0, 0, 0);
+  }
+  .btn-delete {
+    background-color: #f44336;
+    color: white;
+  }
+  .btn-edit:hover, .btn-delete:hover {
+    opacity: 0.8;
+  }
+
+.addUser {
+    background-color: #077bff;
+    color: white;
+    padding: 7px 14px;
+    border-radius: 5px;
+    font-family: sans-serif;
+    font-size: 15px;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    text-align: center;
+}
+
+.material-symbols-outlined {
+    font-size: 20px;
+    margin: 0px 0px 0px 10px;
+}
