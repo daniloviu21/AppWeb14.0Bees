@@ -37,16 +37,30 @@ export class UserComponent {
   { id: 25, usuario: 'jose', correo: 'jose@gmail.com', rol: 'user' },
 ];
 
+usuarioSeleccionado: any = null;
+nuevoUsuario = { usuario: '', correo: '', rol: '' };
 
-  editarUsuario(id: number) {
-    console.log('Edit user', id);
-  }
+editarUsuario(id: number) {
+}
 
-  eliminarUsuario(id: number) {
-    console.log('Delete user', id);
-  }
+guardarEdicion() {
+}
 
-  openModal(){
-    console.log('Open modal');
-  }
+eliminarUsuario(id: number) {
+  this.users = this.users.filter(user => user.id !== id);
+  this.reordenarIds();
+}
+
+agregarUsuario() {
+}
+
+openModal() {
+  this.usuarioSeleccionado = null;
+  this.nuevoUsuario = { usuario: '', correo: '', rol: '' };
+}
+
+reordenarIds() {
+  this.users = this.users.map((user, index) => ({ ...user, id: index + 1 }));
+}
+
 }
