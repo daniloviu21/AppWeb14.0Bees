@@ -11,6 +11,8 @@ import { provideAnimationsAsync } from '@angular/platform-browser/animations/asy
 import { HomeComponent } from './pages/home/home.component';
 import { UserComponent } from './pages/management/user/user.component';
 import { ProductComponent } from './pages/management/product/product.component';
+import { FormsModule } from '@angular/forms';
+import { PedidosComponent } from './pages/management/pedidos/pedidos.component';
 
 @NgModule({
   declarations: [
@@ -22,11 +24,14 @@ import { ProductComponent } from './pages/management/product/product.component';
     ClientPageComponent,
     HomeComponent,
     UserComponent,
-    ProductComponent
+    ProductComponent,
+    PedidosComponent,
+
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule
   ],
   providers: [
     provideClientHydration(withEventReplay()),

@@ -1,40 +1,146 @@
+/* Estilos generales */
 .main-content {
-    margin-left: 250px;
-    padding: 20px;
-    min-height: 100vh;
+  margin-left: 260px;
+  padding: 25px;
+  min-height: 100vh;
+  background-color: #f4f6f9;
+  font-family: 'Inter', sans-serif;
 }
 
+/* Contenedor principal */
+.content-wrapper {
+  max-width: 1100px;
+  margin: auto;
+  padding: 25px;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+}
+
+/* Título principal */
+.title {
+  font-size: 24px;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+/* Tabla responsive */
+.table-container {
+  overflow-x: auto;
+}
+
+/* Estilos de la tabla */
 .admin-table {
-    width: 100%;
-    border-collapse: collapse;
-    margin: 20px 0;
-    font-size: 18px;
-    text-align: left;
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  font-size: 16px;
+  background: white;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+}
+
+/* Encabezado de la tabla */
+.admin-table thead {
+  background-color: #0056b3;
+  color: white;
+  font-weight: 600;
+}
+
+.admin-table th,
+.admin-table td {
+  padding: 14px 16px;
+  border-bottom: 1px solid #e0e0e0;
+  text-align: left;
+}
+
+/* Estilos de las filas */
+.admin-table tbody tr:hover {
+  background-color: #f1f3f6;
+  transition: background 0.3s ease;
+}
+
+/* Celdas de rol */
+.role-cell {
+  font-weight: 500;
+}
+
+.admin-role {
+  color: #d9534f;
+  font-weight: 600;
+}
+
+.user-role {
+  color: #007bff;
+  font-weight: 600;
+}
+
+/* Acciones */
+.actions {
+  display: flex;
+  gap: 10px;
+}
+
+/* Botones */
+.btn {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  padding: 8px 12px;
+  border: none;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 500;
+  border-radius: 6px;
+  transition: all 0.3s ease;
+}
+
+.btn i {
+  font-size: 16px;
+}
+
+/* Botón Editar */
+.btn-edit {
+  background-color: #007bff;
+  color: white;
+}
+
+.btn-edit:hover {
+  background-color: #0056b3;
+  transform: scale(1.05);
+}
+
+/* Botón Eliminar */
+.btn-delete {
+  background-color: #dc3545;
+  color: white;
+}
+
+.btn-delete:hover {
+  background-color: #b92c3f;
+  transform: scale(1.05);
+}
+
+/* Responsividad */
+@media (max-width: 768px) {
+  .main-content {
+    margin-left: 0;
+    padding: 15px;
   }
-  .admin-table th, .admin-table td {
-    padding: 12px 15px;
-    border: 1px solid #ddd;
+
+  .content-wrapper {
+    padding: 15px;
   }
-  .admin-table thead {
-    background-color: #f2f2f2;
+
+  .admin-table {
+    font-size: 14px;
   }
-  .admin-table tr:nth-child(even) {
-    background-color: #f9f9f9;
+
+  .btn {
+    font-size: 13px;
+    padding: 6px 10px;
   }
-  .btn-edit, .btn-delete {
-    padding: 5px 10px;
-    margin: 0 5px;
-    border: none;
-    cursor: pointer;
-  }
-  .btn-edit {
-    background-color: #4CAF50;
-    color: white;
-  }
-  .btn-delete {
-    background-color: #f44336;
-    color: white;
-  }
-  .btn-edit:hover, .btn-delete:hover {
-    opacity: 0.8;
-  }
+}

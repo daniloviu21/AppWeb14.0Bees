@@ -8,11 +8,11 @@
         <h2>Inicia sesión</h2>
         <p>Nos alegramos de tenerte de vuelta.</p>
 
-        <form>
-            <input type="text" placeholder="Nombre usuario" />
-            <input type="password" placeholder="Contraseña" />
+        <form (submit)="login(); $event.preventDefault()">
+            <input type="text" [(ngModel)]="username" placeholder="Nombre usuario" name="username" required />
+            <input type="password" [(ngModel)]="password" placeholder="Contraseña" name="password" required />
             <div class="options">
-                <label><input type="checkbox" /> Acuérdate de mí</label>
+                <label><input type="checkbox" [(ngModel)]="rememberMe" name="rememberMe" /> Acuérdate de mí</label>
                 <a href="#">Olvidé mi contraseña</a>
             </div>
             <button type="submit" class="btn-primary">Acceder</button>

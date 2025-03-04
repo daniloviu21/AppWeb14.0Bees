@@ -1,0 +1,36 @@
+<div class="main-content">
+    <div class="content-wrapper">
+        <h1 class="title">Gestión de Pedidos</h1>
+        <div class="table-container">
+            <table class="admin-table">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Cliente</th>
+                        <th>Total</th>
+                        <th>Estado</th>
+                        <th>Acciones</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let pedido of pedidos">
+                        <td>{{ pedido.id }}</td>
+                        <td>{{ pedido.cliente }}</td>
+                        <td>{{ pedido.total | currency }}</td>
+                        <td class="status-cell">{{ pedido.estado }}</td>
+                        <td class="actions">
+                            <button class="btn btn-edit" (click)="editarPedido(pedido.id)" aria-label="Editar Pedido">
+                                <i class="fas fa-edit"></i> Editar
+                            </button>
+                            <button class="btn btn-delete" (click)="eliminarPedido(pedido.id)"
+                                aria-label="Eliminar Pedido">
+                                <i class="fas fa-trash-alt"></i> Eliminar
+                            </button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+<app-sidebar></app-sidebar>

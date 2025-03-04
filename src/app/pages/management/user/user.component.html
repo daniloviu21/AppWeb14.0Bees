@@ -1,29 +1,37 @@
 <div class="main-content">
-  <div style="margin: 15px;">
-    <h1>Gestión Usuarios</h1>
-    <table class="admin-table">
-      <thead>
-        <tr>
-          <th>ID</th>
-          <th>Usuario</th>
-          <th>Email</th>
-          <th>Rol</th>
-          <th>Acciones</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr *ngFor="let management of users">
-          <td>{{ management.id }}</td>
-          <td>{{ management.usuario }}</td>
-          <td>{{ management.correo }}</td>
-          <td>{{ management.rol }}</td>
-          <td>
-            <button class="btn-edit" (click)="editarUsuario(management.id)">Editar</button>
-            <button class="btn-delete" (click)="eliminarUsuario(management.id)">Eliminar</button>
-          </td>
-        </tr>
-      </tbody>
-    </table>
+  <div class="content-wrapper">
+    <h1 class="title">Gestión de Usuarios</h1>
+    <div class="table-container">
+      <table class="admin-table">
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Usuario</th>
+            <th>Email</th>
+            <th>Rol</th>
+            <th>Acciones</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let user of users">
+            <td>{{ user.id }}</td>
+            <td>{{ user.usuario }}</td>
+            <td>{{ user.correo }}</td>
+            <td class="role-cell" [ngClass]="{'admin-role': user.rol === 'Admin', 'user-role': user.rol !== 'Admin'}">
+              {{ user.rol }}
+            </td>
+            <td class="actions">
+              <button class="btn btn-edit" (click)="editarUsuario(user.id)" aria-label="Editar Usuario">
+                <i class="fas fa-edit"></i> Editar
+              </button>
+              <button class="btn btn-delete" (click)="eliminarUsuario(user.id)" aria-label="Eliminar Usuario">
+                <i class="fas fa-trash-alt"></i> Eliminar
+              </button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
   </div>
 </div>
-  <app-sidebar></app-sidebar>
+<app-sidebar></app-sidebar>
