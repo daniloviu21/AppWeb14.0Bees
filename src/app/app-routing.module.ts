@@ -10,17 +10,16 @@ import { PedidosComponent } from './pages/management/pedidos/pedidos.component';
 const routes: Routes = [
   // Redirigir al login cuando la ruta sea la raíz
   { path: '', redirectTo: '/login', pathMatch: 'full' },
-  // localhost:4200/home
+
+  // Rutas existentes
   { path: 'home', component: HomeComponent },
-  // localhost:4200/login
   { path: 'login', component: LoginPageComponent },
-  // localhost:4200/register
   { path: 'register', component: RegisterPageComponent },
-  // localhost:4200/managementuser
   { path: 'managementuser', component: UserComponent },
-  // localhost:4200/managementproduct
   { path: 'managementproduct', component: ProductComponent },
-  { path: 'managementpedidos', component: PedidosComponent }
+  { path: 'managementpedidos', component: PedidosComponent },
+
+  // Rutas con carga diferida
 ];
 
 @NgModule({

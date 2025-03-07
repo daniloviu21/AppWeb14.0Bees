@@ -15,9 +15,9 @@ export class LoginPageComponent implements OnInit {
   constructor(private router: Router) { }
 
   ngOnInit() {
-    if (typeof window !== 'undefined') { // ✅ Verificamos si estamos en el navegador
+    if (typeof window !== 'undefined') {
       if (!localStorage.getItem('user')) {
-        // ✅ Establecer usuario y contraseña por defecto si no existen
+
         localStorage.setItem('user', 'david');
         localStorage.setItem('password', '12345678');
       }
@@ -29,7 +29,7 @@ export class LoginPageComponent implements OnInit {
   }
 
   login() {
-    if (typeof window === 'undefined') return; // ✅ Evitamos errores en SSR
+    if (typeof window === 'undefined') return;
 
     const storedUser = localStorage.getItem('user');
     const storedPass = localStorage.getItem('password');
@@ -40,7 +40,7 @@ export class LoginPageComponent implements OnInit {
         localStorage.setItem('rememberMe', 'true');
       }
       alert('Inicio de sesión exitoso');
-      this.router.navigate(['/home']); // Redirigir a la página principal
+      this.router.navigate(['/home']);
     } else {
       alert('Usuario o contraseña incorrectos');
     }

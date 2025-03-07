@@ -14,6 +14,7 @@ import { ProductComponent } from './pages/management/product/product.component';
 import { FormsModule } from '@angular/forms';
 import { PedidosComponent } from './pages/management/pedidos/pedidos.component';
 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -26,6 +27,7 @@ import { PedidosComponent } from './pages/management/pedidos/pedidos.component';
     UserComponent,
     ProductComponent,
     PedidosComponent,
+
 
   ],
   imports: [
