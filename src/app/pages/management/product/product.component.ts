@@ -15,11 +15,15 @@ export class ProductComponent {
 
   editarProducto(id: number) {
     console.log(`Editar producto con ID: ${id}`);
-    // Aquí iría la lógica para editar el producto
   }
 
   eliminarProducto(id: number) {
     console.log(`Eliminar producto con ID: ${id}`);
     this.products = this.products.filter(product => product.id !== id);
+    this.reordenarIds();
+  }
+
+  reordenarIds() {
+    this.products.forEach((product, index) => product.id = index + 1);
   }
 }

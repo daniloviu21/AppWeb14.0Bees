@@ -3,12 +3,10 @@ import { Component } from '@angular/core';
 @Component({
   selector: 'app-user',
   standalone: false,
-
   templateUrl: './user.component.html',
-  styleUrl: './user.component.css'
+  styleUrls: ['./user.component.css']
 })
 export class UserComponent {
-
   users = [
     { id: 1, usuario: 'juan', correo: 'juan@gmail.com', rol: 'admin' },
     { id: 2, usuario: 'maria', correo: 'maria@gmail.com', rol: 'user' },
@@ -25,15 +23,29 @@ export class UserComponent {
     { id: 13, usuario: 'susana', correo: 'susana@gmail.com', rol: 'user' },
     { id: 14, usuario: 'pablo', correo: 'pablo@gmail.com', rol: 'editor' },
     { id: 15, usuario: 'veronica', correo: 'veronica@gmail.com', rol: 'admin' },
-
   ];
-
 
   editarUsuario(id: number) {
     console.log('Edit user', id);
   }
 
+  guardarEdicion() {
+  }
+
   eliminarUsuario(id: number) {
-    console.log('Delete user', id);
+    this.users = this.users.filter(user => user.id !== id);
+    this.reordenarIds();
+  }
+
+  agregarUsuario(usuario: string, correo: string, rol: string) {
+    const nuevoId = this.users.length > 0 ? this.users[this.users.length - 1].id + 1 : 1;
+    this.users.push({ id: nuevoId, usuario, correo, rol });
+  }
+
+  openModal() {
+  }
+
+  reordenarIds() {
+    this.users.forEach((user, index) => user.id = index + 1);
   }
 }

@@ -20,6 +20,11 @@ export class PedidosComponent {
   eliminarPedido(id: number) {
     if (confirm(`¿Seguro que quieres eliminar el pedido con ID: ${id}?`)) {
       this.pedidos = this.pedidos.filter(pedido => pedido.id !== id);
+      this.reordenarIds();
     }
+  }
+
+  reordenarIds() {
+    this.pedidos.forEach((pedido, index) => pedido.id = index + 1);
   }
 }
