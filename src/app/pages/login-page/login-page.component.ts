@@ -40,7 +40,7 @@ export class LoginPageComponent implements OnInit {
         localStorage.setItem('rememberMe', 'true');
       }
       alert('Inicio de sesión exitoso');
-      this.router.navigate(['/home']);
+      this.router.navigate(['/dashboard']);
     } else {
       alert('Usuario o contraseña incorrectos');
     }

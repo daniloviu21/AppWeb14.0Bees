@@ -1,0 +1,70 @@
+<div class="main-content">
+    <div class="content-wrapper">
+        <h1 class="title">Dashboard</h1>
+
+        <!-- Sección de estadísticas -->
+        <div class="stats-container">
+            <div class="stat-card">
+                <span [ngClass]="{ 'active': usuariosActivos > 0, 'inactive': usuariosActivos === 0 }">
+                    <i class="fas fa-users"></i> Usuarios Activos: {{ usuariosActivos }}
+                </span>
+            </div>
+            <div class="stat-card">
+                <span [ngClass]="{ 'active': pedidos.length > 0, 'inactive': pedidos.length === 0 }">
+                    <i class="fas fa-box"></i> Pedidos: {{ pedidos.length }}
+                </span>
+            </div>
+            <div class="stat-card">
+                <span [ngClass]="{ 'active': enviosPendientes > 0, 'inactive': enviosPendientes === 0 }">
+                    <i class="fas fa-truck"></i> Envíos Pendientes: {{ enviosPendientes }}
+                </span>
+            </div>
+        </div>
+
+        <!-- Lista de Pedidos -->
+        <h2 class="sub-title">Lista de Pedidos</h2>
+        <div class="orders-container">
+            <div class="order-card" *ngFor="let pedido of pedidos">
+                <div class="order-header">
+                    <span class="order-id">#{{ pedido.id }}</span>
+                    <span class="order-status"
+                        [ngClass]="{ 'completed': pedido.estado === 'Completado', 'pending': pedido.estado === 'Pendiente' }">
+                        {{ pedido.estado }}
+                    </span>
+                </div>
+                <div class="order-details">
+                    <p><strong>Cliente:</strong> {{ pedido.cliente }}</p>
+                    <p><strong>Total:</strong> {{ pedido.total | currency:'USD':'symbol' }}</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- 📅 Sección de Calendario de Entregas -->
+        <h2 class="sub-title">Calendario de Entregas</h2>
+        <div class="calendar-container">
+            <table class="calendar-table">
+                <thead>
+                    <tr>
+                        <th>Fecha</th>
+                        <th>Cliente</th>
+                        <th>Estado</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let entrega of calendarioEntregas">
+                        <td>{{ entrega.fecha | date:'dd/MM/yyyy' }}</td>
+                        <td>{{ entrega.cliente }}</td>
+                        <td
+                            [ngClass]="{ 'delivered': entrega.estado === 'Entregado', 'pending': entrega.estado === 'Pendiente' }">
+                            {{ entrega.estado }}
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+    </div>
+</div>
+<app-registro-usuarios></app-registro-usuarios>
+
+<app-sidebar></app-sidebar>
