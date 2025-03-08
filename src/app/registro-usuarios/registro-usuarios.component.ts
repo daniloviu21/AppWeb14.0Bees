@@ -4,7 +4,7 @@ import { Component } from '@angular/core';
   selector: 'app-registro-usuarios',
   templateUrl: './registro-usuarios.component.html',
   styleUrls: ['./registro-usuarios.component.css'],
-  standalone: false,
+  standalone: false
 })
 export class RegistroUsuariosComponent {
   usuario = {
