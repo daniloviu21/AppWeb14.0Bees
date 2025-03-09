@@ -1,7 +1,9 @@
+/* 📌 Sidebar fijo con diseño limpio */
 .sidebar {
     width: 250px;
     height: 100vh;
-    background: #1e1e2d;
+    background: #1F263E;
+    /* Azul oscuro minimalista */
     color: white;
     padding-top: 20px;
     position: fixed;
@@ -9,34 +11,33 @@
     top: 0;
     overflow-y: auto;
     box-shadow: 3px 0 10px rgba(0, 0, 0, 0.2);
+    display: flex;
+    flex-direction: column;
 }
 
+/* 📌 Títulos de secciones */
 .sidebar-section {
-    margin-bottom: 20px;
-    padding: 10px;
+    padding: 10px 20px;
+    margin-bottom: 10px;
 }
 
 .sidebar-section h3 {
-    font-size: 16px;
+    font-size: 14px;
     text-transform: uppercase;
-    padding: 10px 20px;
-    color: #ffffff;
-    background: rgba(255, 255, 255, 0.1);
-    border-radius: 5px;
+    color: #dcdcdc;
+    padding-bottom: 5px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
 }
 
+/* 📌 Lista de elementos del sidebar */
 .sidebar ul {
     list-style: none;
     padding: 0;
     margin: 0;
 }
 
-li {
-    cursor: pointer;
-}
-
 .sidebar ul li {
-    padding: 8px 20px;
+    padding: 10px 20px;
 }
 
 .sidebar-link {
@@ -44,27 +45,41 @@ li {
     color: #b3b3b3;
     display: flex;
     align-items: center;
-    gap: 10px;
-    font-size: 14px;
+    gap: 12px;
+    font-size: 16px;
+    padding: 12px;
+    border-radius: 6px;
     transition: all 0.3s ease;
 }
 
+/* 📌 Iconos de los enlaces */
+.sidebar-link i {
+    font-size: 18px;
+    color: #ffffff;
+}
+
+/* 📌 Efecto hover */
 .sidebar-link:hover {
+    background: rgba(255, 255, 255, 0.1);
     color: white;
-    transform: translateX(5px);
 }
 
-.sidebar-section ul {
-    padding-left: 10px;
-}
-
+/* 📌 Enlace activo */
 .sidebar-link.active {
+    background: #e94560;
+    /* Rojo vibrante */
     color: white;
     font-weight: bold;
 }
 
+/* 📌 Responsividad */
 @media (max-width: 768px) {
     .sidebar {
-        width: 200px;
+        width: 220px;
+    }
+
+    .sidebar-link {
+        font-size: 14px;
+        padding: 10px;
     }
 }

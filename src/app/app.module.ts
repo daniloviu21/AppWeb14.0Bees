@@ -13,6 +13,9 @@ import { UserComponent } from './pages/management/user/user.component';
 import { ProductComponent } from './pages/management/product/product.component';
 import { FormsModule } from '@angular/forms';
 import { PedidosComponent } from './pages/management/pedidos/pedidos.component';
+import { DashboardComponent } from './dashboard/dashboard.component';
+import { RegistroUsuariosComponent } from './registro-usuarios/registro-usuarios.component';
+import { RegistroProductoComponent } from './registro-producto/registro-producto.component';
 
 
 @NgModule({
@@ -27,13 +30,21 @@ import { PedidosComponent } from './pages/management/pedidos/pedidos.component';
     UserComponent,
     ProductComponent,
     PedidosComponent,
+    DashboardComponent,
+    RegistroUsuariosComponent,
+    RegistroProductoComponent
+
+
 
 
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+
+
+
   ],
   providers: [
     provideClientHydration(withEventReplay()),
