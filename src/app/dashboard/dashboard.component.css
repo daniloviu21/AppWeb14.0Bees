@@ -9,6 +9,106 @@
     transition: margin-left 0.3s ease;
 }
 
+.color-nav{
+background: rgba(255, 255, 255, 0.541);
+margin-bottom: 20px;
+border-radius:  0 0 8px 8px;
+box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 20px;
+    border-radius: 8px 8px 0 0;
+    background-color: #1F263E;
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+    color: white;
+}
+
+.nav-icons {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.notification {
+    position: relative;
+    padding: 10px;
+    background: #2e395c;
+    border-radius: 50%;
+    cursor: pointer;
+    color: white;
+}
+
+.badge {
+    position: absolute;
+    top: -5px;
+    right: -5px;
+    background: red;
+    color: white;
+    font-size: 12px;
+    padding: 3px 6px;
+    border-radius: 50%;
+}
+
+.user-info {
+    font-size: 14px;
+    color: white;
+}
+
+.username {
+    font-weight: bold;
+}
+
+.dashboard-content {
+    display: flex;
+    gap: 15px;
+    padding: 20px;
+}
+
+.card {
+    background: #2e395c;
+    padding: 20px;
+    border-radius: 10px;
+    flex: 1;
+    text-align: center;
+    position: relative;
+    color: white;
+}
+
+.card p {
+    margin: 0;
+    font-size: 16px;
+}
+
+.card h2 {
+    margin: 10px 0;
+    font-size: 24px;
+}
+
+.highlight {
+    position: relative;
+}
+
+.badge-percent {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: white;
+    color: #2563eb;
+    padding: 5px 10px;
+    border-radius: 10px;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+
 /* 📌 Sidebar fijo */
 .sidebar {
     width: 250px;
@@ -22,9 +122,8 @@
 
 /* 📌 Contenedor principal */
 .content-wrapper {
-    max-width: 1100px;
+    max-width: 100%;
     margin: auto;
-    padding: 20px;
 }
 
 /* 📌 Título */

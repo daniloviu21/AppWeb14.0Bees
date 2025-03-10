@@ -32,7 +32,7 @@ import { RegistroProductoComponent } from './registro-producto/registro-producto
     PedidosComponent,
     DashboardComponent,
     RegistroUsuariosComponent,
-    RegistroProductoComponent
+    RegistroProductoComponent,
 
 
 
