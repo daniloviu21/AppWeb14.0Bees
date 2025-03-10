@@ -63,7 +63,70 @@
               </div>
             </div>
           </div>          
-
+        
+          <div class="orders-container">
+            <h2>Pedidos</h2>
+            <table>
+              <thead>
+                <tr>
+                  <th>Cliente</th>
+                  <th>Producto</th>
+                  <th>ID de Usuario</th>
+                  <th>Fecha de Pedido</th>
+                  <th>Monto</th>
+                  <th>Estado de Pago</th>
+                  <th>Estado del Pedido</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>
+                    <img src="cliente1.jpg" alt="Ellie Collins">
+                    Ellie Collins
+                  </td>
+                  <td>
+                    <img src="producto1.jpg" alt="Ginger Snacks">
+                    Snacks de Jengibre
+                  </td>
+                  <td>ViVo827</td>
+                  <td>12/12/2021</td>
+                  <td>$18.00</td>
+                  <td class="paid">✔ Pagado</td>
+                  <td class="delivered">Entregado</td>
+                </tr>
+                <tr>
+                  <td>
+                    <img src="cliente2.jpg" alt="Sophie Nguyen">
+                    Sophie Nguyen
+                  </td>
+                  <td>
+                    <img src="producto2.jpg" alt="Guava Sorbet">
+                    Sorbete de Guayaba
+                  </td>
+                  <td>ViVo253</td>
+                  <td>18/12/2021</td>
+                  <td>$32.00</td>
+                  <td class="failed">✖ Fallido</td>
+                  <td class="cancelled">Cancelado</td>
+                </tr>
+                <tr>
+                  <td>
+                    <img src="cliente3.jpg" alt="Darcy Ryan">
+                    Darcy Ryan
+                  </td>
+                  <td>
+                    <img src="producto3.jpg" alt="Gooseberry Surprise">
+                    Sorpresa de Grosella
+                  </td>
+                  <td>ViVo878</td>
+                  <td>22/12/2021</td>
+                  <td>$19.00</td>
+                  <td class="awaiting">⏳ En espera</td>
+                  <td class="processing">Procesando</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
 </div>
 
 <app-sidebar></app-sidebar>
