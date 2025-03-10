@@ -1,5 +1,7 @@
 <div class="main-content">
     <div class="content-wrapper">
+
+        <!--Seccion del navbar-->
         <div class="color-nav">
             <nav class="navbar">
                 <div class="logo">VANGUARD</div>
@@ -10,77 +12,58 @@
                     <div class="user-info">Admin <span class="username">Taylor Franklin</span></div>
                 </div>
             </nav>
-            
             <div class="dashboard-content">
                 <div class="card"><p>Ventas</p> <h2>543</h2> </div>
-                <div class="card"> <p>Pedidos</p> <h2>2900</h2> </div>
-                <div class="card highlight"> <p>Tickets</p> <h2>6500</h2> <span class="badge-percent">+18%</span> </div>
-                <div class="card highlight"> <p>Alertas</p> <h2>7200</h2> <span class="badge-percent">+24%</span> </div>
-            </div>
-        </div>
-        <!-- Sección de estadísticas -->
-        <div class="stats-container">
-            <div class="stat-card">
-                <span [ngClass]="{ 'active': usuariosActivos > 0, 'inactive': usuariosActivos === 0 }">
-                    <i class="fas fa-users"></i> Usuarios Activos: {{ usuariosActivos }}
-                </span>
-            </div>
-            <div class="stat-card">
-                <span [ngClass]="{ 'active': pedidos.length > 0, 'inactive': pedidos.length === 0 }">
-                    <i class="fas fa-box"></i> Pedidos: {{ pedidos.length }}
-                </span>
-            </div>
-            <div class="stat-card">
-                <span [ngClass]="{ 'active': enviosPendientes > 0, 'inactive': enviosPendientes === 0 }">
-                    <i class="fas fa-truck"></i> Envíos Pendientes: {{ enviosPendientes }}
-                </span>
+                <div class="card"> <p>Pedidos</p> <h2>123</h2> </div>
+                <div class="card highlight"> <p>Tickets</p> <h2>657</h2> <span class="badge-percent">+18%</span> </div>
+                <div class="card highlight"> <p>Alertas</p> <h2>345</h2> <span class="badge-percent">+24%</span> </div>
             </div>
         </div>
 
-        <!-- Lista de Pedidos -->
-        <h2 class="sub-title">Lista de Pedidos</h2>
-        <div class="orders-container">
-            <div class="order-card" *ngFor="let pedido of pedidos">
-                <div class="order-header">
-                    <span class="order-id">#{{ pedido.id }}</span>
-                    <span class="order-status"
-                        [ngClass]="{ 'completed': pedido.estado === 'Completado', 'pending': pedido.estado === 'Pendiente' }">
-                        {{ pedido.estado }}
-                    </span>
-                </div>
+        <!--otraseccion-->
+        <div class="dashboard-container">
+            <div class="orders-section">
+              <h3>Órdenes</h3>
+              <div class="order-card" *ngFor="let order of orders">
+                <img [src]="order.image" alt="Product Image" class="order-img" />
                 <div class="order-details">
-                    <p><strong>Cliente:</strong> {{ pedido.cliente }}</p>
-                    <p><strong>Total:</strong> {{ pedido.total | currency:'USD':'symbol' }}</p>
+                  <h4>{{ order.title }}</h4>
+                  <p>{{ order.description }}</p>
+                  <small>{{ order.time }}</small>
                 </div>
+              </div>
             </div>
-        </div>
+          
+            <div class="activity-section">
+              <h3>Actividad</h3>
+              <div class="activity-card" *ngFor="let payment of payments">
+                <img [src]="payment.avatar" alt="User Avatar" class="avatar" />
+                <div class="activity-details">
+                  <h4>{{ payment.name }}</h4>
+                  <small>{{ payment.time }}</small>
+                  <p>{{ payment.description }}</p>
+                  <span class="status" [ngClass]="{'sent': payment.description.includes('Pendiente'), 'paid': payment.description.includes('realizado')}">
+                    {{ payment.description.includes('Pendiente') ? 'Pendiente' : 'Pagado' }}
+                  </span>
+                </div>
+              </div>
+            </div>
+          
+            <div class="transactions-section">
+              <h3>Transacciones</h3>
+              <div class="transaction-card" *ngFor="let transaction of transactions">
 
-        <!-- 📅 Sección de Calendario de Entregas -->
-        <h2 class="sub-title">Calendario de Entregas</h2>
-        <div class="calendar-container">
-            <table class="calendar-table">
-                <thead>
-                    <tr>
-                        <th>Fecha</th>
-                        <th>Cliente</th>
-                        <th>Estado</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr *ngFor="let entrega of calendarioEntregas">
-                        <td>{{ entrega.fecha | date:'dd/MM/yyyy' }}</td>
-                        <td>{{ entrega.cliente }}</td>
-                        <td
-                            [ngClass]="{ 'delivered': entrega.estado === 'Entregado', 'pending': entrega.estado === 'Pendiente' }">
-                            {{ entrega.estado }}
-                        </td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
+                <div class="transaction-details">
+                  <h4>{{ transaction.title }}</h4>
+                  <p>{{ transaction.description }}</p>
+                </div>
+                <span class="transaction-amount" [ngClass]="transaction.amount > 0 ? 'positive' : 'negative'">
+                  {{ transaction.amount | currency:'USD' }}
+                </span>
+              </div>
+            </div>
+          </div>          
 
-    </div>
 </div>
-<app-registro-usuarios></app-registro-usuarios>
 
 <app-sidebar></app-sidebar>
