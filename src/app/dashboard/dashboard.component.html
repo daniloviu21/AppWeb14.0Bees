@@ -79,54 +79,26 @@
                 </tr>
               </thead>
               <tbody>
-                <tr>
+                <tr *ngFor="let pedido of pedidos">
                   <td>
-                    <img src="cliente1.jpg" alt="Ellie Collins">
-                    Ellie Collins
+                    <img [src]="pedido.clienteImagen" [alt]="pedido.clienteNombre">
+                    {{ pedido.clienteNombre }}
                   </td>
                   <td>
-                    <img src="producto1.jpg" alt="Ginger Snacks">
-                    Snacks de Jengibre
+                    <img [src]="pedido.productoImagen" [alt]="pedido.productoNombre">
+                    {{ pedido.productoNombre }}
                   </td>
-                  <td>ViVo827</td>
-                  <td>12/12/2021</td>
-                  <td>$18.00</td>
-                  <td class="paid">✔ Pagado</td>
-                  <td class="delivered">Entregado</td>
-                </tr>
-                <tr>
-                  <td>
-                    <img src="cliente2.jpg" alt="Sophie Nguyen">
-                    Sophie Nguyen
-                  </td>
-                  <td>
-                    <img src="producto2.jpg" alt="Guava Sorbet">
-                    Sorbete de Guayaba
-                  </td>
-                  <td>ViVo253</td>
-                  <td>18/12/2021</td>
-                  <td>$32.00</td>
-                  <td class="failed">✖ Fallido</td>
-                  <td class="cancelled">Cancelado</td>
-                </tr>
-                <tr>
-                  <td>
-                    <img src="cliente3.jpg" alt="Darcy Ryan">
-                    Darcy Ryan
-                  </td>
-                  <td>
-                    <img src="producto3.jpg" alt="Gooseberry Surprise">
-                    Sorpresa de Grosella
-                  </td>
-                  <td>ViVo878</td>
-                  <td>22/12/2021</td>
-                  <td>$19.00</td>
-                  <td class="awaiting">⏳ En espera</td>
-                  <td class="processing">Procesando</td>
+                  <td>{{ pedido.usuarioID }}</td>
+                  <td>{{ pedido.fecha }}</td>
+                  <td>{{ pedido.monto | currency }}</td>
+                  <td [ngClass]="pedido.estadoPagoClase">{{ pedido.estadoPago }}</td>
+                  <td [ngClass]="pedido.estadoPedidoClase">{{ pedido.estadoPedido }}</td>
                 </tr>
               </tbody>
             </table>
           </div>
+          
+          
 </div>
 
 <app-sidebar></app-sidebar>

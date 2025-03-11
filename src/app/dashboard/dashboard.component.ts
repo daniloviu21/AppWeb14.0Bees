@@ -1,4 +1,4 @@
-import { Component, OnInit} from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
 interface Pedido {
   id: number;
@@ -7,10 +7,46 @@ interface Pedido {
   estado: string;
 }
 
+interface PedidoExtendido {
+  clienteNombre: string;
+  clienteImagen: string;
+  productoNombre: string;
+  productoImagen: string;
+  usuarioID: string;
+  fecha: string;
+  monto: number;
+  estadoPago: string;
+  estadoPagoClase: string;
+  estadoPedido: string;
+  estadoPedidoClase: string;
+}
+
 interface Entrega {
   fecha: Date;
   cliente: string;
   estado: string;
+}
+
+interface Order {
+  title: string;
+  description: string;
+  time: string;
+  discount: number;
+  image: string;
+}
+
+interface Payment {
+  name: string;
+  description: string;
+  time: string;
+  avatar: string;
+}
+
+interface Transaction {
+  title: string;
+  description: string;
+  amount: number;
+  type: string;
 }
 
 @Component({
@@ -21,13 +57,19 @@ interface Entrega {
 })
 export class DashboardComponent implements OnInit {
   usuariosActivos: number = 0;
-  pedidos: Pedido[] = [];
+  pedidos: PedidoExtendido[] = [];
   enviosPendientes: number = 0;
   calendarioEntregas: Entrega[] = [];
+  orders: Order[] = [];
+  payments: Payment[] = [];
+  transactions: Transaction[] = [];
 
   ngOnInit() {
     this.cargarDatos();
     this.cargarCalendarioEntregas();
+    this.cargarOrders();
+    this.cargarPayments();
+    this.cargarTransactions();
   }
 
   cargarDatos() {
@@ -35,9 +77,45 @@ export class DashboardComponent implements OnInit {
     this.enviosPendientes = 8;
 
     this.pedidos = [
-      { id: 101, cliente: 'Juan Pérez', total: 150.75, estado: 'Completado' },
-      { id: 102, cliente: 'Ana López', total: 230.50, estado: 'Pendiente' },
-      { id: 103, cliente: 'Carlos Ramírez', total: 99.99, estado: 'Completado' }
+      {
+        clienteNombre: 'Ellie Collins',
+        clienteImagen: 'assets/cliente1.jpg',
+        productoNombre: 'Snacks de Jengibre',
+        productoImagen: 'assets/producto1.jpg',
+        usuarioID: 'ViVo827',
+        fecha: '12/12/2021',
+        monto: 18.0,
+        estadoPago: '✔ Pagado',
+        estadoPagoClase: 'paid',
+        estadoPedido: 'Entregado',
+        estadoPedidoClase: 'delivered'
+      },
+      {
+        clienteNombre: 'Sophie Nguyen',
+        clienteImagen: 'assets/cliente2.jpg',
+        productoNombre: 'Sorbete de Guayaba',
+        productoImagen: 'assets/producto2.jpg',
+        usuarioID: 'ViVo253',
+        fecha: '18/12/2021',
+        monto: 32.0,
+        estadoPago: '✖ Fallido',
+        estadoPagoClase: 'failed',
+        estadoPedido: 'Cancelado',
+        estadoPedidoClase: 'cancelled'
+      },
+      {
+        clienteNombre: 'Darcy Ryan',
+        clienteImagen: 'assets/cliente3.jpg',
+        productoNombre: 'Sorpresa de Grosella',
+        productoImagen: 'assets/producto3.jpg',
+        usuarioID: 'ViVo878',
+        fecha: '22/12/2021',
+        monto: 19.0,
+        estadoPago: '⏳ En espera',
+        estadoPagoClase: 'awaiting',
+        estadoPedido: 'Procesando',
+        estadoPedidoClase: 'processing'
+      }
     ];
   }
 
@@ -49,82 +127,61 @@ export class DashboardComponent implements OnInit {
     ];
   }
 
-  orders = [
-    {
-      title: 'The Speaker',
-      description: 'Nuevo pedido recibido',
-      time: 'hace 2 minutos',
-      discount: 20,
-      image: 'assets/speaker.png'
-    },
-    {
-      title: 'Head Massage',
-      description: 'Nuevo pedido recibido',
-      time: 'hace 3 minutos',
-      discount: 30,
-      image: 'assets/head-massage.png'
-    },
-    {
-      title: 'Game Box',
-      description: 'Nuevo pedido recibido',
-      time: 'hace 5 minutos',
-      discount: 60,
-      image: 'assets/game-box.png'
-    },
-    {
-      title: 'Game Box',
-      description: 'Nuevo pedido recibido',
-      time: 'hace 5 minutos',
-      discount: 60,
-      image: 'assets/game-box.png'
-    },
-    {
-      title: 'Game Box',
-      description: 'Nuevo pedido recibido',
-      time: 'hace 5 minutos',
-      discount: 60,
-      image: 'assets/game-box.png'
-    }
+  cargarOrders() {
+    this.orders = [
+      {
+        title: 'The Speaker',
+        description: 'Nuevo pedido recibido',
+        time: 'hace 2 minutos',
+        discount: 20,
+        image: 'assets/speaker.png'
+      },
+      {
+        title: 'Head Massage',
+        description: 'Nuevo pedido recibido',
+        time: 'hace 3 minutos',
+        discount: 30,
+        image: 'assets/head-massage.png'
+      },
+      {
+        title: 'Game Box',
+        description: 'Nuevo pedido recibido',
+        time: 'hace 5 minutos',
+        discount: 60,
+        image: 'assets/game-box.png'
+      }
+    ];
+  }
 
-  ];
+  cargarPayments() {
+    this.payments = [
+      {
+        name: 'Christian Ochoa',
+        description: 'Pago pendiente. #26788',
+        time: 'hace 3 minutos',
+        avatar: 'assets/user1.png'
+      },
+      {
+        name: 'Socorro Decker',
+        description: 'Pago realizado #23457',
+        time: 'hace 7 minutos',
+        avatar: 'assets/user2.png'
+      },
+      {
+        name: 'Haywood Sharp',
+        description: '',
+        time: 'hace 16 horas',
+        avatar: 'assets/user3.png'
+      }
+    ];
+  }
 
-  payments = [
-    {
-      name: 'Christian Ochoa',
-      description: 'Pago pendiente. #26788',
-      time: 'hace 3 minutos',
-      avatar: 'assets/user1.png'
-    },
-    {
-      name: 'Socorro Decker',
-      description: 'Pago realizado #23457',
-      time: 'hace 7 minutos',
-      avatar: 'assets/user2.png'
-    },
-    {
-      name: 'Haywood Sharp',
-      description: '',
-      time: 'hace 16 horas',
-      avatar: 'assets/user3.png'
-    },
-    {
-      name: 'Haywood Sharp',
-      description: '',
-      time: 'hace 6 horas',
-      avatar: 'assets/user3.png'
-    },
-    {
-      name: 'Haywood Sharp',
-      description: '',
-      time: 'hace 4 horas',
-      avatar: 'assets/user3.png'
-    }
-  ];
-  transactions = [
-    { title: 'Visa Card', description: 'Laptop Ordered', amount: -1590, type: 'Card' },
-    { title: 'Paypal', description: 'Payment Received', amount: 310, type: 'Paypal' },
-    { title: 'Travel', description: 'Yosemite Trip', amount: -4900, type: 'Travel' },
-    { title: 'Shopping', description: 'Bill Paid', amount: -285, type: 'Shopping' }
-  ];
+  cargarTransactions() {
+    this.transactions = [
+      { title: 'Visa Card', description: 'Rotulacion lona', amount: 1590, type: 'Card' },
+      { title: 'Paypal', description: 'Serivicio de soldadura', amount: 310, type: 'Paypal' },
+      { title: 'Travel', description: 'Letras 3D', amount: 4900, type: 'Travel' },
+      { title: 'Shopping', description: 'Anuncios luminosos', amount: 285, type: 'Shopping' }
+    ];
+  }
 }
-
