@@ -16,6 +16,7 @@ import { PedidosComponent } from './pages/management/pedidos/pedidos.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { RegistroUsuariosComponent } from './registro-usuarios/registro-usuarios.component';
 import { RegistroProductoComponent } from './registro-producto/registro-producto.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -42,7 +43,7 @@ import { RegistroProductoComponent } from './registro-producto/registro-producto
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-
+    ReactiveFormsModule
 
 
   ],

@@ -1,0 +1,116 @@
+.contenedor {
+    padding: 20px;
+    background-color: #f4f7fc;
+    height: 100%;   
+     margin-left: 250px;
+    transition: margin-left 0.3s ease;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+
+  h3{
+    font-size: 20px;
+  }
+  
+  h2 {
+    text-align: center;
+    font-size: 1.9rem;
+    margin-top: 30px;
+  }
+  
+  .formulario-contenedor {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+  }
+  
+  .seccion {
+    flex: 1;
+    margin-top: 20px;
+    padding: 15px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background: #f9f9f9;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
+  
+  .campo {
+    margin-bottom: 10px;
+  }
+  
+  .campo label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    font-size: 18px;
+  }
+
+  .height_cart{
+    height: 100px;
+  }
+  
+  .campo input, .campo select, .campo textarea {
+    width: 98%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+  }
+  
+  .imagenes {
+    margin-top: 20px;
+  }
+  
+  .dropzone {
+    height: 300px;
+    padding: 20px;
+    text-align: center;
+    border: 2px dashed #aaa;
+    border-radius: 5px;
+    background: #f9f9f9;
+  }
+
+  .preview-container {
+    display: flex;
+    gap: 10px;
+    margin-top: 10px;
+    align-items: center;
+    display: flex;
+  }
+  
+  .preview img {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    border-radius: 5px;
+  }
+  
+  .botones {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 20px;
+    font-size: 18px;
+  }
+  
+  .cancelar {
+    background: #ddd;
+    font-size: 18px;
+    font-weight: bold;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    margin-right: 10px;
+    width: 15%;
+  }
+  
+  .agregar {
+    background: #28a745;
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    width: 15%;
+  }
+  

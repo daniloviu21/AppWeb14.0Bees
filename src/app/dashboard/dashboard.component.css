@@ -264,6 +264,7 @@ box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
   }
 
   th, td {
+    margin: 5px;
     padding: 12px;
     text-align: left;
     border-bottom: 1px solid #ddd;
@@ -283,16 +284,17 @@ box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
   }
 
   td.paid {
-    color: green;
+    color: black;
     font-weight: bold;
+    background: none;
   }
   td.failed {
-    color: red;
+    color: black;
     font-weight: bold; 
   }
 
   td.awaiting {
-    color: blue;
+    color: black;
     font-weight: bold; 
   }
 

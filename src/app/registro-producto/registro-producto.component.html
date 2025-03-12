@@ -1,1 +1,83 @@
-<p>registro-producto works!</p>
+<div class="contenedor">
+    <h2>Información del Producto</h2>
+    <form [formGroup]="productoForm" (ngSubmit)="agregarProducto()">
+      
+      <div class="formulario-contenedor">
+        <!-- Sección de Información General -->
+        <div class="seccion">
+          <h3>Información General</h3>
+          <div class="campo">
+            <label>Nombre del Producto</label>
+            <input type="text" formControlName="nombre" placeholder="Ingrese el nombre del producto">
+          </div>
+          
+          <div class="campo">
+            <label>Categoría del Producto</label>
+            <select formControlName="categoria">
+              <option *ngFor="let categoria of categorias" [value]="categoria">{{ categoria }}</option>
+            </select>
+          </div>
+  
+          <div class="campo">
+            <label>Precio del Producto</label>
+            <input type="number" formControlName="precio" placeholder="Ingrese el precio">
+          </div>
+  
+          <div class="campo">
+            <label>Descuento</label>
+            <input type="number" formControlName="descuento" placeholder="Ingrese el descuento"> %
+          </div>
+  
+          <div class="campo">
+            <label>Descripción del Producto</label>
+            <textarea formControlName="descripcion" placeholder="Ingrese la descripción"></textarea>
+          </div>
+        </div>
+  
+        <div class="seccion">
+          <h3>Meta Datos</h3>
+          <div class="campo">
+            <label>Título Meta</label>
+            <input type="text" formControlName="metaTitulo" placeholder="Ingrese el título meta">
+          </div>
+          
+          <div class="campo">
+            <label>Nombre Meta</label>
+            <input type="text" formControlName="metaNombre" placeholder="Ingrese el nombre meta">
+          </div>
+          
+          <div class="campo">
+            <label>Etiquetas Meta</label>
+            <input type="text" formControlName="metaEtiquetas" placeholder="Ingrese las etiquetas meta">
+          </div>
+          
+          <div class="campo">
+            <label>Descripción Meta</label>
+            <textarea formControlName="metaDescripcion" placeholder="Ingrese la descripción meta" class="height_cart"></textarea>
+          </div>
+        </div>
+      </div>
+  
+      <div class="seccion">
+        <h3>Imágenes del Producto</h3>
+        <div class="dropzone" (drop)="onDrop($event)" (dragover)="onDragOver($event)">
+          <input type="file" multiple (change)="onFileSelected($event)" hidden #fileInput>
+          <button type="button" (click)="fileInput.click()">Subir Imágenes</button>
+          <p>Arrastra archivos aquí o haz clic para subir.</p>
+        </div>
+        <div class="preview-container">
+          <div *ngFor="let img of imagenesVistaPrevia" class="preview">
+            <img [src]="img" alt="Vista previa">
+          </div>
+        </div>
+      </div>
+  
+      <div class="botones">
+        <button type="button" class="cancelar" (click)="cancelar()">Cancelar</button>
+        <button type="submit" class="agregar">Agregar Producto</button>
+      </div>
+    </form>
+  </div>
+  
+
+  <app-sidebar></app-sidebar>
