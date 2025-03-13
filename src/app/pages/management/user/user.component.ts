@@ -1,5 +1,14 @@
 import { Component } from '@angular/core';
 
+interface User {
+  id: number;
+  avatar: string;
+  name: string;
+  email: string;
+  isAdmin: boolean;
+  has2FA: boolean;
+}
+
 @Component({
   selector: 'app-user',
   standalone: false,
@@ -7,45 +16,28 @@ import { Component } from '@angular/core';
   styleUrls: ['./user.component.css']
 })
 export class UserComponent {
-  users = [
-    { id: 1, usuario: 'juan', correo: 'juan@gmail.com', rol: 'admin' },
-    { id: 2, usuario: 'maria', correo: 'maria@gmail.com', rol: 'user' },
-    { id: 3, usuario: 'pedro', correo: 'pedro@gmail.com', rol: 'editor' },
-    { id: 4, usuario: 'luisa', correo: 'luisa@gmail.com', rol: 'user' },
-    { id: 5, usuario: 'carlos', correo: 'carlos@gmail.com', rol: 'admin' },
-    { id: 6, usuario: 'ana', correo: 'ana@gmail.com', rol: 'user' },
-    { id: 7, usuario: 'jorge', correo: 'jorge@gmail.com', rol: 'editor' },
-    { id: 8, usuario: 'luis', correo: 'luis@gmail.com', rol: 'user' },
-    { id: 9, usuario: 'elena', correo: 'elena@gmail.com', rol: 'admin' },
-    { id: 10, usuario: 'ricardo', correo: 'ricardo@gmail.com', rol: 'user' },
-    { id: 11, usuario: 'sofia', correo: 'sofia@gmail.com', rol: 'editor' },
-    { id: 12, usuario: 'martin', correo: 'martin@gmail.com', rol: 'admin' },
-    { id: 13, usuario: 'susana', correo: 'susana@gmail.com', rol: 'user' },
-    { id: 14, usuario: 'pablo', correo: 'pablo@gmail.com', rol: 'editor' },
-    { id: 15, usuario: 'veronica', correo: 'veronica@gmail.com', rol: 'admin' },
+ 
+  users: User[] = [
+    { id: 7, avatar: 'assets/avatar1.jpg', name: 'Mior Zaki', email: 'mior@nova.laravel.com', isAdmin: true, has2FA: true },
+    { id: 6, avatar: 'assets/avatar2.jpg', name: 'Jess Archer', email: 'jess@nova.laravel.com', isAdmin: false, has2FA: true },
+    { id: 5, avatar: 'assets/avatar3.jpg', name: 'Dries Vints', email: 'dries@nova.laravel.com', isAdmin: true, has2FA: false },
+    { id: 4, avatar: 'assets/avatar4.jpg', name: 'Ian Landsman', email: 'ian@nova.laravel.com', isAdmin: false, has2FA: false },
+    { id: 3, avatar: 'assets/avatar5.jpg', name: 'Mohamed Said', email: 'mohamed@nova.laravel.com', isAdmin: true, has2FA: false },
+    { id: 2, avatar: 'assets/avatar6.jpg', name: 'David Hemphill', email: 'david@nova.laravel.com', isAdmin: false, has2FA: true },
+    { id: 1, avatar: 'assets/avatar7.jpg', name: 'Taylor Otwell', email: 'taylor@nova.laravel.com', isAdmin: true, has2FA: false }
   ];
 
-  editarUsuario(id: number) {
-    console.log('Edit user', id);
+  createUser() {
+    alert('Función para crear un usuario');
   }
 
-  guardarEdicion() {
+  editUser(id: number) {
+    alert(`Editar usuario con ID ${id}`);
   }
 
-  eliminarUsuario(id: number) {
-    this.users = this.users.filter(user => user.id !== id);
-    this.reordenarIds();
-  }
-
-  agregarUsuario(usuario: string, correo: string, rol: string) {
-    const nuevoId = this.users.length > 0 ? this.users[this.users.length - 1].id + 1 : 1;
-    this.users.push({ id: nuevoId, usuario, correo, rol });
-  }
-
-  openModal() {
-  }
-
-  reordenarIds() {
-    this.users.forEach((user, index) => user.id = index + 1);
+  deleteUser(id: number) {
+    if (confirm('¿Estás seguro de eliminar este usuario?')) {
+      this.users = this.users.filter(user => user.id !== id);
+    }
   }
 }

@@ -1,37 +1,54 @@
-<div class="main-content">
-  <div class="content-wrapper">
-    <h1 class="title">Gestión de Usuarios</h1>
-    <div class="table-container">
-      <table class="admin-table">
-        <thead>
-          <tr>
-            <th>ID</th>
-            <th>Usuario</th>
-            <th>Email</th>
-            <th>Rol</th>
-            <th>Acciones</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr *ngFor="let user of users">
-            <td>{{ user.id }}</td>
-            <td>{{ user.usuario }}</td>
-            <td>{{ user.correo }}</td>
-            <td class="role-cell" [ngClass]="{'admin-role': user.rol === 'Admin', 'user-role': user.rol !== 'Admin'}">
-              {{ user.rol }}
-            </td>
-            <td class="actions">
-              <button class="btn btn-edit" (click)="editarUsuario(user.id)" aria-label="Editar Usuario">
-                <i class="fas fa-edit"></i> Editar
-              </button>
-              <button class="btn btn-delete" (click)="eliminarUsuario(user.id)" aria-label="Eliminar Usuario">
-                <i class="fas fa-trash-alt"></i> Eliminar
-              </button>
-            </td>
-          </tr>
-        </tbody>
-      </table>
+<div class="container">
+  <div class="stats">
+    <div class="card">
+      <p>Usuario actual</p>
+      <h2>7</h2>
+    </div>
+    <div class="card">
+      <p>Nuevos usuarios</p>
+      <h2>75%</h2>
+      <div class="progress-bar">
+        <div class="progress" style="width: 75%"></div>
+      </div>
     </div>
   </div>
+
+  <h2>Usuarios</h2>
+  <input type="text" class="search" placeholder="Buscador">
+
+  <button class="create-btn" (click)="createUser()">Crear usuario</button>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Id</th>
+        <th>Perfil</th>
+        <th>Nombre completo</th>
+        <th>Correo electrónico</th>
+        <th>Admin</th>
+        <th>2FA</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let user of users">
+        <td>{{ user.id }}</td>
+        <td><img [src]="user.avatar" class="avatar" alt="Avatar"></td>
+        <td>{{ user.name }}</td>
+        <td>{{ user.email }}</td>
+        <td>
+          <span [class.green]="user.isAdmin" [class.red]="!user.isAdmin">✔</span>
+        </td>
+        <td>
+          <span [class.green]="user.has2FA" [class.red]="!user.has2FA">✔</span>
+        </td>
+        <td>
+          <button class="action-btn" (click)="editUser(user.id)">✏</button>
+          <button class="action-btn delete" (click)="deleteUser(user.id)">🗑</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
 </div>
+
 <app-sidebar></app-sidebar>
