@@ -10,6 +10,8 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { RegistroUsuariosComponent } from './registro-usuarios/registro-usuarios.component';
 import { RegistroProductoComponent } from './registro-producto/registro-producto.component';
 
+import { CategoriaFormComponent } from './pages/categoria-form/categoria-form.component';
+
 const routes: Routes = [
   // Redirigir al login cuando la ruta sea la raíz
   { path: '', redirectTo: '/login', pathMatch: 'full' },
@@ -25,6 +27,9 @@ const routes: Routes = [
   { path: 'registro-usuarios', component: RegistroUsuariosComponent  },
   { path: 'registro-productos', component: RegistroProductoComponent  },
 
+
+  { path: 'categoriaForm', component: CategoriaFormComponent }, // Asegurar que coincide con el router.navigate
+  { path: 'categoria/:id', component: CategoriaFormComponent },
 
   // Rutas con carga diferida
 ];

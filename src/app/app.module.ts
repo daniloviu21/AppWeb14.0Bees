@@ -18,6 +18,10 @@ import { RegistroUsuariosComponent } from './registro-usuarios/registro-usuarios
 import { RegistroProductoComponent } from './registro-producto/registro-producto.component';
 import { ReactiveFormsModule } from '@angular/forms';
 
+import { CategoriaFormComponent } from './pages/categoria-form/categoria-form.component';
+
+import { HttpClientModule } from '@angular/common/http';
+import { RouterModule } from '@angular/router';
 
 @NgModule({
   declarations: [
@@ -35,7 +39,7 @@ import { ReactiveFormsModule } from '@angular/forms';
     RegistroUsuariosComponent,
     RegistroProductoComponent,
 
-
+    CategoriaFormComponent,
 
 
   ],
@@ -43,7 +47,10 @@ import { ReactiveFormsModule } from '@angular/forms';
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    RouterModule,
+    HttpClientModule
+
 
 
   ],
