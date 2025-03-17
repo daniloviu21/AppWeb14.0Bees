@@ -1,8 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { CategoriaService } from '../../services/categoria.service';
-import { RouterModule } from '@angular/router';
-
-
 
 @Component({
   selector: 'app-categoria-list',
@@ -20,15 +17,25 @@ export class CategoriaListComponent implements OnInit {
   }
 
   getCategorias(): void {
-    this.categoriaService.getCategorias().subscribe(data => {
-      this.categorias = data;
+    this.categoriaService.getCategorias().subscribe({
+      next: (data) => {
+        this.categorias = data;
+      },
+      error: (error) => {
+        console.error('Error al obtener categorías:', error);
+      }
     });
   }
 
   eliminarCategoria(id: number): void {
     if (confirm('¿Seguro que deseas eliminar esta categoría?')) {
-      this.categoriaService.deleteCategoria(id).subscribe(() => {
-        this.getCategorias(); // Recargar la lista después de eliminar
+      this.categoriaService.deleteCategoria(id).subscribe({
+        next: () => {
+          this.getCategorias(); // Recargar la lista después de eliminar
+        },
+        error: (error) => {
+          console.error('Error al eliminar la categoría:', error);
+        }
       });
     }
   }

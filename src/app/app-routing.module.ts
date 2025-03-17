@@ -11,6 +11,7 @@ import { RegistroUsuariosComponent } from './registro-usuarios/registro-usuarios
 import { RegistroProductoComponent } from './registro-producto/registro-producto.component';
 
 import { CategoriaFormComponent } from './pages/categoria-form/categoria-form.component';
+import { CategoriaListComponent } from './pages/categoria-list/categoria-list.component';
 
 const routes: Routes = [
   // Redirigir al login cuando la ruta sea la raíz
@@ -29,7 +30,9 @@ const routes: Routes = [
 
 
   { path: 'categoriaForm', component: CategoriaFormComponent }, // Asegurar que coincide con el router.navigate
-  { path: 'categoria/:id', component: CategoriaFormComponent },
+  { path: 'categoriaForm/:id', component: CategoriaFormComponent },
+
+  { path: 'categoriaList', component: CategoriaListComponent },
 
   // Rutas con carga diferida
 ];

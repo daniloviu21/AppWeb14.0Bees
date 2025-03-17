@@ -19,6 +19,7 @@ import { RegistroProductoComponent } from './registro-producto/registro-producto
 import { ReactiveFormsModule } from '@angular/forms';
 
 import { CategoriaFormComponent } from './pages/categoria-form/categoria-form.component';
+import { CategoriaListComponent } from './pages/categoria-list/categoria-list.component';
 
 import { HttpClientModule } from '@angular/common/http';
 import { RouterModule } from '@angular/router';
@@ -40,6 +41,7 @@ import { RouterModule } from '@angular/router';
     RegistroProductoComponent,
 
     CategoriaFormComponent,
+    CategoriaListComponent,
 
 
   ],
@@ -49,7 +51,7 @@ import { RouterModule } from '@angular/router';
     FormsModule,
     ReactiveFormsModule,
     RouterModule,
-    HttpClientModule
+    HttpClientModule,
 
 
 

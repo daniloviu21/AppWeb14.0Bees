@@ -1,3 +1,4 @@
+<div class="main-content">
 <h2>{{ id ? 'Editar' : 'Nueva' }} Categoría</h2>
 <form [formGroup]="categoriaForm" (ngSubmit)="guardarCategoria()">
     <label>Nombre:</label>
@@ -10,3 +11,5 @@
     <a routerLink="/categorias">Cancelar</a>
   </button>
   </form>
+</div>
+  <app-sidebar></app-sidebar>
