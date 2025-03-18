@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpErrorResponse } from '@angular/common/http';
-import { catchError, Observable, throwError } from 'rxjs';
+import { catchError, filter, map, Observable, throwError } from 'rxjs';
 
 // Interfaz para tipar los datos de categoría
 export interface Categoria {
@@ -29,15 +29,33 @@ export class CategoriaService {
     );
   }  
 
+
+  // Aqui aniadi un filtro para que solo te regrese la categoria con un id en especifico, 
+  // map permite manipular el resultado de la peticion por medio de un arreglo
+  // y con find buscamos el objeto que tenga el id
   getCategoriaById(id: number): Observable<Categoria> {
-    return this.http.get<Categoria>(`${this.apiUrl}/${id}`);
+    return this.http.get<Categoria[]>(this.apiUrl).pipe(
+      catchError((error: HttpErrorResponse) => {
+        console.error('Error al obtener categorías:', error);
+        return throwError(() => new Error('Error al obtener categorías'));
+      }),
+      map((categorias: Categoria[]) => {
+        const categoria = categorias.find(c => c.id == id);
+        if (!categoria) {
+          throw new Error(`Categoría con id ${id} no encontrada`);
+        }
+        return categoria;
+      })
+    );
   }
+  
 
   createCategoria(data: Categoria): Observable<Categoria> {
     return this.http.post<Categoria>(this.apiUrl, data);
   }
 
-  updateCategoria(id: number, data: Categoria): Observable<Categoria> {
+  // cambie el tipo de dato que recibe la funcion, de "Categoria" a "any"
+  updateCategoria(id: number, data: any): Observable<Categoria> {
     return this.http.put<Categoria>(`${this.apiUrl}/${id}`, data);
   }
 

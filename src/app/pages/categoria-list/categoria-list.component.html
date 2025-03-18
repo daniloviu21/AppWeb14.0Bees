@@ -14,13 +14,15 @@
       </tr>
     </thead>
     <tbody>
+
+      <!-- Aqui aniadi la directiva ngIf para ocultar la categoria en caso de que haya sido eliminada -->
       <tr *ngFor="let categoria of categorias">
-        <td>{{ categoria.id }}</td>
-        <td>{{ categoria.nombrecategoria }}</td>
-        <td>{{ categoria.descripcion }}</td>
-        <td class="actions">
-          <button [routerLink]="['/categoriaForm', categoria.id]" class="edit-btn">Editar</button>
-          <button (click)="eliminarCategoria(categoria.id)" class="delete-btn">Eliminar</button>
+        <td *ngIf="categoria.deleted_at == null">{{ categoria.id }}</td>
+        <td *ngIf="categoria.deleted_at == null">{{ categoria.nombrecategoria }}</td>
+        <td *ngIf="categoria.deleted_at == null">{{ categoria.descripcion }}</td>
+        <td class="actions" *ngIf="categoria.deleted_at == null">
+          <button [routerLink]="['/categoriaForm', categoria.id]" class="edit-btn" *ngIf="categoria.deleted_at == null">Editar</button>
+          <button (click)="eliminarCategoria(categoria.id)" class="delete-btn" *ngIf="categoria.deleted_at == null">Eliminar</button>
         </td>
       </tr>
     </tbody>
