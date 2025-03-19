@@ -1,6 +1,6 @@
 <div class="register-container">
     <div class="left-panel">
-        <img src="https://raw.githubusercontent.com/jrvrr/DESARROLLO-MOVIL-MULTIPLATAFORMA/main/src/assets/icon/logo.vanguard.png"
+        <img src="/src/assets/icon/logo.vanguard.png"
             alt="Logo" class="logo" />
         <p>Únete y disfruta de todos nuestros beneficios exclusivos.</p>
     </div>
@@ -9,9 +9,9 @@
         <p>Únete a nosotros y disfruta de nuestros servicios.</p>
 
         <form>
-            <input type="text" placeholder="Nombre usuario" />
-            <input type="email" placeholder="Correo electrónico" />
-            <input type="password" placeholder="Contraseña" />
+            <input type="text" [(ngModel)]="username" placeholder="Nombre usuario" name="username" required />
+            <input type="email" [(ngModel)]="email" placeholder="correo electrónico" name="email" required />
+            <input type="password" [(ngModel)]="password" placeholder="Contraseña" name="password" required />
             <button type="submit" class="btn-primary">Registrarse</button>
         </form>
         <p class="login-link">¿Ya tienes una cuenta? <a href="login">Inicia sesión</a></p>

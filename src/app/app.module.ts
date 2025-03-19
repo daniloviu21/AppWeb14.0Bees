@@ -18,6 +18,7 @@ import { RegistroUsuariosComponent } from './registro-usuarios/registro-usuarios
 import { RegistroProductoComponent } from './registro-producto/registro-producto.component';
 import { ReactiveFormsModule } from '@angular/forms';
 
+
 import { CategoriaFormComponent } from './pages/categoria-form/categoria-form.component';
 import { CategoriaListComponent } from './pages/categoria-list/categoria-list.component';
 

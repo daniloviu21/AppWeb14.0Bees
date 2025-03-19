@@ -1,16 +1,17 @@
 <div class="main-content">
-  <h2>{{ id ? 'Editar' : 'Nueva' }} Categoría</h2>
   <form [formGroup]="categoriaForm" (ngSubmit)="guardarCategoria()">
-      <label>Nombre:</label>
-      <!-- cambie el nombre del input para que no haya conflicto con el nombre del campo en la bd -->
-      <input type="text" formControlName="nombrecategoria" required> 
+    <h2>{{ id ? 'Editar' : 'Nueva' }} Categoría</h2>
+    
+    <label>Nombre:</label>
+    <input type="text" formControlName="nombrecategoria" required>
+    
     <label>Descripción:</label>
     <textarea formControlName="descripcion" required></textarea>
-  
-    <button type="submit">Guardar</button>
-    <button type="button">
+    
+    <button class="save">Guardar</button>
+    <button class="cancel">
       <a routerLink="/categorias">Cancelar</a>
     </button>
-    </form>
-  </div>
-    <app-sidebar></app-sidebar>
+  </form>
+</div>
+<app-sidebar></app-sidebar>

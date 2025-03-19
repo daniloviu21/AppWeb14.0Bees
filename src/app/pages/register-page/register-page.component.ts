@@ -9,4 +9,11 @@ import { Component } from '@angular/core';
 })
 export class RegisterPageComponent {
 
+  username: string = '';
+  email: string = '';
+  password: string = '';
+
+  onRegister() {
+    console.log('Datos de registro:', this.username, this.email, this.password);
+  }
 }

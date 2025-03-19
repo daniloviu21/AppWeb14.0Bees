@@ -11,7 +11,7 @@
     width: 40%;
     height: 100vh;
     /* Ocupa toda la altura */
-    background-color: #111;
+    background-color: #090C15;
     color: white;
     display: flex;
     flex-direction: column;
@@ -19,12 +19,12 @@
     justify-content: center;
     text-align: center;
     padding: 20px;
-    border-radius: 0;
-    /* Elimina el redondeo */
+    font-size: 20px;
 }
 
 .logo {
     width: 300px;
+    height: auto;
     margin-bottom: 20px;
 }
 
@@ -32,9 +32,19 @@
     width: 60%;
     background-color: white;
     padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin: 20px;
     border-radius: 0 10px 10px 0;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     text-align: center;
+    font-size: 20px;
+    justify-content: center;
+    align-items: center;
+}
+
+a{
+    color: blue;
 }
 
 h2 {
@@ -58,15 +68,17 @@ form {
 
 input {
     padding: 10px;
-    width: 90%;
+    width: 97.5%;
     border: 1px solid #ccc;
     border-radius: 5px;
+    font-size: 17px;
 }
 
 .options {
     display: flex;
     justify-content: space-between;
     font-size: 14px;
+    border-radius: 5px;
 }
 
 .options a {
@@ -75,6 +87,9 @@ input {
 }
 
 .btn-primary {
+    display: block;
+    margin: 0 auto;
+    width: 40%;
     background-color: #007bff;
     color: white;
     padding: 10px;
@@ -82,23 +97,6 @@ input {
     border-radius: 5px;
     cursor: pointer;
     font-size: 16px;
-}
-
-.btn-google {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-top: 10px;
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    cursor: pointer;
-    background: white;
-}
-
-.btn-google img {
-    width: 20px;
-    margin-right: 10px;
 }
 
 .register-link {
