@@ -30,6 +30,8 @@ import { DepartamentosListComponent } from './pages/departamentos-list/departame
 import { DepartamentosFormComponent } from './pages/departamentos-form/departamentos-form.component';
 import { MarcaFormComponent } from './pages/marca-form/marca-form.component';
 import { MarcaListComponent } from './pages/marca-list/marca-list.component';
+import { RolesListComponent } from './pages/roles-list/roles-list.component';
+import { RolesFormComponent } from './pages/roles-form/roles-form.component';
 
 @NgModule({
   declarations: [
@@ -55,6 +57,8 @@ import { MarcaListComponent } from './pages/marca-list/marca-list.component';
     DepartamentosFormComponent,
     MarcaFormComponent,
     MarcaListComponent,
+    RolesListComponent,
+    RolesFormComponent,
 
 
   ],

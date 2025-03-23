@@ -1,1 +1,10 @@
-<p>marca-form works!</p>
+<div class="main-content">
+    <form [formGroup]="marcaForm" (ngSubmit)="submitForm()">
+        <label for="nombreMarca">Nombre de la Marca:</label>
+        <input id="nombreMarca" formControlName="nombreMarca" required>
+      
+        <button type="submit">Guardar</button>
+      </form>
+</div>
+
+<app-sidebar></app-sidebar>

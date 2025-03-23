@@ -1,0 +1,23 @@
+<div class="main-content">
+<table>
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Nombre del Rol</th>
+        <th>Acciones</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let rol of roles">
+        <td>{{ rol.id }}</td>
+        <td>{{ rol.rol }}</td>
+        <td>
+          <button (click)="editarRol(rol.id)">Editar</button>
+          <button (click)="deleteRol(rol.id)">Eliminar</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  </div>
+
+  <app-sidebar></app-sidebar>

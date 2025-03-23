@@ -1,0 +1,10 @@
+<div class="main-content">
+    <form [formGroup]="rolForm" (ngSubmit)="guardarRol()">
+        <label for="rol">Nombre del Rol:</label>
+        <input id="rol" formControlName="rol" required>
+      
+        <button type="submit">Guardar</button>
+      </form>
+</div>
+<app-sidebar></app-sidebar>
+

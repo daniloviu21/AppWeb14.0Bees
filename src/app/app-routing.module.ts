@@ -18,6 +18,8 @@ import { DepartamentosListComponent } from './pages/departamentos-list/departame
 import { DepartamentosFormComponent } from './pages/departamentos-form/departamentos-form.component';
 import { MarcaFormComponent } from './pages/marca-form/marca-form.component';
 import { MarcaListComponent } from './pages/marca-list/marca-list.component';
+import { RolesListComponent } from './pages/roles-list/roles-list.component';
+import { RolesFormComponent } from './pages/roles-form/roles-form.component';
 
 const routes: Routes = [
   // Redirigir al login cuando la ruta sea la raíz
@@ -50,6 +52,10 @@ const routes: Routes = [
   { path: 'marcaForm', component: MarcaFormComponent },
   { path: 'marcaForm/:id', component: MarcaFormComponent },
   { path: 'marcaList', component: MarcaListComponent },
+
+  { path: 'rolesForm', component: RolesFormComponent },
+  { path: 'rolesForm/:id', component: RolesFormComponent },
+  { path: 'rolesList', component: RolesListComponent },
   // Rutas con carga diferida
 ];
 

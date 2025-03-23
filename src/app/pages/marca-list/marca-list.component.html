@@ -1,1 +1,24 @@
-<p>marca-list works!</p>
+<div class="main-content">
+    <table>
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Nombre de la Marca</th>
+            <th>Acciones</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let marca of marcas">
+            <td>{{ marca.id }}</td>
+            <td>{{ marca.nombreMarca }}</td>
+            <td>
+              <button (click)="editarMarca(marca.id)">Editar</button>
+              <button (click)="deleteMarca(marca.id)">Eliminar</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      
+</div>
+
+<app-sidebar></app-sidebar>
