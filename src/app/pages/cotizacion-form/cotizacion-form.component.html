@@ -1,0 +1,28 @@
+<div class="main-content">
+    <form [formGroup]="cotizacionForm" (ngSubmit)="submitForm()">
+        <label for="descripcion">Descripción:</label>
+        <input id="descripcion" formControlName="descripcion" required>
+      
+        <label for="precio">Precio:</label>
+        <input id="precio" type="number" formControlName="precio" required>
+      
+        <label for="fecha">Fecha:</label>
+        <input id="fecha" type="date" formControlName="fecha" required>
+      
+        <label for="estatus">Estatus:</label>
+        <select id="estatus" formControlName="estatus">
+          <option value="Pendiente">Pendiente</option>
+          <option value="Aprobada">Aprobada</option>
+          <option value="Rechazada">Rechazada</option>
+        </select>
+      
+        <label for="formaPago">Forma de Pago:</label>
+        <input id="formaPago" formControlName="formaPago" required>
+      
+        <label for="idCliente">Cliente:</label>
+        <input id="idCliente" type="number" formControlName="idCliente" required>
+      
+        <button type="submit">Guardar</button>
+      </form> 
+</div>
+<app-sidebar></app-sidebar>

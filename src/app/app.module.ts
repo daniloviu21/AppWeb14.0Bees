@@ -24,6 +24,12 @@ import { CategoriaListComponent } from './pages/categoria-list/categoria-list.co
 
 import { HttpClientModule } from '@angular/common/http';
 import { RouterModule } from '@angular/router';
+import { CotizacionFormComponent } from './pages/cotizacion-form/cotizacion-form.component';
+import { CotizacionListComponent } from './pages/cotizacion-list/cotizacion-list.component';
+import { DepartamentosListComponent } from './pages/departamentos-list/departamentos-list.component';
+import { DepartamentosFormComponent } from './pages/departamentos-form/departamentos-form.component';
+import { MarcaFormComponent } from './pages/marca-form/marca-form.component';
+import { MarcaListComponent } from './pages/marca-list/marca-list.component';
 
 @NgModule({
   declarations: [
@@ -43,6 +49,12 @@ import { RouterModule } from '@angular/router';
 
     CategoriaFormComponent,
     CategoriaListComponent,
+    CotizacionFormComponent,
+    CotizacionListComponent,
+    DepartamentosListComponent,
+    DepartamentosFormComponent,
+    MarcaFormComponent,
+    MarcaListComponent,
 
 
   ],

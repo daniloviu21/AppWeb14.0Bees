@@ -7,7 +7,7 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class RolService {
-  private apiUrl = 'https://tu-api.com/'; //api de roles
+  private apiUrl = 'http://82.29.197.167:3000/api/Roles'; //api de roles
 
   constructor(private http: HttpClient) {}
 

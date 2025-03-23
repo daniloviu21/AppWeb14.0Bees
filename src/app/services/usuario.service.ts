@@ -7,7 +7,7 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class UsuarioService {
-  private apiUrl = 'https://tu-api.com/'; //api de usuarios
+  private apiUrl = 'http://82.29.197.167:3000/api/usuarios'; //api de usuarios
 
   constructor(private http: HttpClient) {}
 

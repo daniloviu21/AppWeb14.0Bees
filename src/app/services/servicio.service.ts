@@ -7,7 +7,7 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class ServicioService {
-  private apiUrl = 'https://tu-api.com/'; //api de servicios
+  private apiUrl = 'http://82.29.197.167:3000/api/servicios'; //api de servicios
 
   constructor(private http: HttpClient) {}
 

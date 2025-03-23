@@ -1,0 +1,9 @@
+<div class="main-content">
+    <form [formGroup]="departamentoForm" (ngSubmit)="guardarDepartamento()">
+        <label for="nombreDepartamento">Nombre del Departamento:</label>
+        <input id="nombreDepartamento" formControlName="nombreDepartamento" required>
+      
+        <button type="submit">Guardar</button>
+      </form>
+</div>
+<app-sidebar></app-sidebar>

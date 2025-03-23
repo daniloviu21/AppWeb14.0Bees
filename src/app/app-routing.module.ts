@@ -12,6 +12,12 @@ import { RegistroProductoComponent } from './registro-producto/registro-producto
 
 import { CategoriaFormComponent } from './pages/categoria-form/categoria-form.component';
 import { CategoriaListComponent } from './pages/categoria-list/categoria-list.component';
+import { CotizacionFormComponent } from './pages/cotizacion-form/cotizacion-form.component';
+import { CotizacionListComponent } from './pages/cotizacion-list/cotizacion-list.component';
+import { DepartamentosListComponent } from './pages/departamentos-list/departamentos-list.component';
+import { DepartamentosFormComponent } from './pages/departamentos-form/departamentos-form.component';
+import { MarcaFormComponent } from './pages/marca-form/marca-form.component';
+import { MarcaListComponent } from './pages/marca-list/marca-list.component';
 
 const routes: Routes = [
   // Redirigir al login cuando la ruta sea la raíz
@@ -31,9 +37,19 @@ const routes: Routes = [
 
   { path: 'categoriaForm', component: CategoriaFormComponent }, // Asegurar que coincide con el router.navigate
   { path: 'categoriaForm/:id', component: CategoriaFormComponent },
-
   { path: 'categoriaList', component: CategoriaListComponent },
 
+  { path: 'cotizacionForm', component: CotizacionFormComponent },
+  { path: 'cotizacionForm/:id', component: CotizacionFormComponent },
+  { path: 'cotizacionList', component: CotizacionListComponent },
+
+  { path: 'departamentosForm', component: DepartamentosFormComponent },
+  { path: 'departamentosForm/:id', component: DepartamentosFormComponent },
+  { path: 'departamentosList', component: DepartamentosListComponent },
+
+  { path: 'marcaForm', component: MarcaFormComponent },
+  { path: 'marcaForm/:id', component: MarcaFormComponent },
+  { path: 'marcaList', component: MarcaListComponent },
   // Rutas con carga diferida
 ];
 

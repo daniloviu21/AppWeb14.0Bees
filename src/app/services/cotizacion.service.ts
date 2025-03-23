@@ -6,7 +6,7 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class CotizacionService {
-  private apiUrl = 'https://tu-api.com/'; //api de cotizacion
+  private apiUrl = 'http://82.29.197.167:3000/api-docs/#/Cotizaciones'; //api de cotizacion
 
   constructor(private http: HttpClient) {}
 

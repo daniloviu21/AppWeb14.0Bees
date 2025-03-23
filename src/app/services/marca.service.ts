@@ -7,7 +7,7 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class MarcaService {
-  private apiUrl = 'https://tu-api.com/'; //api de marcas
+  private apiUrl = 'http://82.29.197.167:3000/api/Marcas'; //api de marcas
 
   constructor(private http: HttpClient) {}
 

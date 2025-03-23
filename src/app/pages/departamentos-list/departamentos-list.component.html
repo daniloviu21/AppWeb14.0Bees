@@ -1,0 +1,22 @@
+<div class="main-content">
+    <table>
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Nombre del Departamento</th>
+            <th>Acciones</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let departamento of departamentos">
+            <td>{{ departamento.id }}</td>
+            <td>{{ departamento.nombreDepartamento }}</td>
+            <td>
+              <button (click)="editarDepartamento(departamento.id)">Editar</button>
+              <button (click)="deleteDepartamento(departamento.id)">Eliminar</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+</div>
+<app-sidebar></app-sidebar>
