@@ -32,6 +32,8 @@ import { MarcaFormComponent } from './pages/marca-form/marca-form.component';
 import { MarcaListComponent } from './pages/marca-list/marca-list.component';
 import { RolesListComponent } from './pages/roles-list/roles-list.component';
 import { RolesFormComponent } from './pages/roles-form/roles-form.component';
+import { ServicioFormComponent } from './pages/servicio-form/servicio-form.component';
+import { ServicioListComponent } from './pages/servicio-list/servicio-list.component';
 
 @NgModule({
   declarations: [
@@ -59,6 +61,8 @@ import { RolesFormComponent } from './pages/roles-form/roles-form.component';
     MarcaListComponent,
     RolesListComponent,
     RolesFormComponent,
+    ServicioFormComponent,
+    ServicioListComponent,
 
 
   ],

@@ -20,6 +20,9 @@ import { MarcaFormComponent } from './pages/marca-form/marca-form.component';
 import { MarcaListComponent } from './pages/marca-list/marca-list.component';
 import { RolesListComponent } from './pages/roles-list/roles-list.component';
 import { RolesFormComponent } from './pages/roles-form/roles-form.component';
+import { ServicioFormComponent } from './pages/servicio-form/servicio-form.component';
+import { ServicioListComponent } from './pages/servicio-list/servicio-list.component';
+
 
 const routes: Routes = [
   // Redirigir al login cuando la ruta sea la raíz
@@ -56,6 +59,10 @@ const routes: Routes = [
   { path: 'rolesForm', component: RolesFormComponent },
   { path: 'rolesForm/:id', component: RolesFormComponent },
   { path: 'rolesList', component: RolesListComponent },
+
+  { path: 'servicioForm', component: ServicioFormComponent },
+  { path: 'servicioForm/:id', component: ServicioFormComponent },
+  { path: 'servicioList', component: ServicioListComponent },
   // Rutas con carga diferida
 ];
 
