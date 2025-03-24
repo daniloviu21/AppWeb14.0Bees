@@ -1,30 +1,38 @@
-<div class="main-content">
-  <div class="header">
-    <h2>Lista de Categorías</h2>
-    <button routerLink="/categoriaForm" class="add-btn">Agregar Categoría</button>
+<main class="flex">
+
+  <app-sidebar></app-sidebar>
+
+  <div class="main-content">
+    <div class="header">
+      <h2>Lista de Categorías</h2>
+      <button routerLink="/categoriaForm" class="add-btn">Agregar Categoría</button>
+    </div>
+  
+    <table>
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Nombre</th>
+          <th>Descripción</th>
+          <th>Acciones</th>
+        </tr>
+      </thead>
+      <tbody>
+        <!-- Muestra solo las categorías no eliminadas -->
+        <tr *ngFor="let categoria of categorias">
+          <td *ngIf="categoria.deleted_at == null || categoria.id < 10">{{ categoria.id }}</td>
+          <td *ngIf="categoria.deleted_at == null || categoria.id < 10">{{ categoria.nombrecategoria}}</td>
+          <td *ngIf="categoria.deleted_at == null || categoria.id < 10">{{ categoria.descripcion}}</td>
+          <td *ngIf="categoria.deleted_at == null || categoria.id < 10" class="actions">
+            .
+            <button *ngIf="categoria.id > 9" [routerLink]="['/categoriaForm', categoria.id]" class="edit-btn">Editar</button>
+            <button *ngIf="categoria.id > 9" (click)="eliminarCategoria(categoria.id)" class="delete-btn">Eliminar</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
   </div>
 
-  <table>
-    <thead>
-      <tr>
-        <th>ID</th>
-        <th>Nombre</th>
-        <th>Descripción</th>
-        <th>Acciones</th>
-      </tr>
-    </thead>
-    <tbody>
-      <!-- Muestra solo las categorías no eliminadas -->
-      <tr *ngFor="let categoria of categorias">
-        <td>{{ categoria.id }}</td>
-        <td>{{ categoria.nombrecategoria }}</td>
-        <td>{{ categoria.descripcion }}</td>
-        <td class="actions">
-          <button [routerLink]="['/categoriaForm', categoria.id]" class="edit-btn">Editar</button>
-          <button (click)="eliminarCategoria(categoria.id)" class="delete-btn">Eliminar</button>
-        </td>
-      </tr>
-    </tbody>
-  </table>
-</div>
-<app-sidebar></app-sidebar>
+
+</main>
+

@@ -12,8 +12,8 @@
             <td>{{ marca.id }}</td>
             <td>{{ marca.nombreMarca }}</td>
             <td>
-              <button (click)="editarMarca(marca.id)">Editar</button>
-              <button (click)="deleteMarca(marca.id)">Eliminar</button>
+              <button class="edit"(click)="editarMarca(marca.id)">Editar</button>
+              <button class="delete" (click)="deleteMarca(marca.id)">Eliminar</button>
             </td>
           </tr>
         </tbody>

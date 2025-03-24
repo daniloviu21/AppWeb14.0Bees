@@ -24,6 +24,9 @@ import { ServicioFormComponent } from './pages/servicio-form/servicio-form.compo
 import { ServicioListComponent } from './pages/servicio-list/servicio-list.component';
 import { UsuarioListComponent } from './pages/usuario-list/usuario-list.component';
 import { UsuarioFormComponent } from './pages/usuario-form/usuario-form.component';
+import { VentasFormComponent } from './pages/ventas-form/ventas-form.component';
+import { ClientesListComponent } from './pages/clientes-list/clientes-list.component';
+import { ClientesFormComponent } from './pages/clientes-form/clientes-form.component';
 
 
 
@@ -70,6 +73,14 @@ const routes: Routes = [
   { path: 'usuarioForm', component: UsuarioFormComponent },
   { path: 'usuarioForm/:id', component: UsuarioFormComponent },
   { path: 'usuarioList', component: UsuarioListComponent },
+
+  { path: 'ventasForm', component: VentasFormComponent },
+  { path: 'ventasForm/:id', component: VentasFormComponent },
+
+  { path: 'clientesForm', component: ClientesFormComponent },
+  { path: 'clientesForm/:id', component: ClientesFormComponent },
+  { path: 'clientesList', component: ClientesListComponent },
+
   // Rutas con carga diferida
 ];
 

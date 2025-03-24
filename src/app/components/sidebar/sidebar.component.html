@@ -6,6 +6,7 @@
                 <li routerLink="/dashboard" class="sidebar-link"><i class="fas fa-home"></i> Dashboard</li>
             </ul>
         </li>
+        <!--
         <li class="sidebar-section">
             <h3>Gestión</h3>
             <ul>
@@ -31,28 +32,43 @@
                 <li routerLink="/catalogo-pedidos" class="sidebar-link"><i class="fas fa-list"></i> Catálogo de Pedidos
                 </li>
             </ul>
-        </li>
+        </li>-->
 
         <li class="sidebar-section">
-            <h3>Nuevo panel</h3>
+            <ul class="sidebar-menu">
+                <li class="menu-title">Gestión de Productos</li>
+                <li routerLink="/categoriaForm" class="sidebar-link"><i class="fas fa-tags"></i> Registro Categoría</li>
+                <li routerLink="/categoriaList" class="sidebar-link"><i class="fas fa-list-alt"></i>Gestión Categoría</li>
+                <li routerLink="/marcaForm" class="sidebar-link"><i class="fas fa-copyright"></i> Registro Marca</li>
+                <li routerLink="/marcaList" class="sidebar-link"><i class="fas fa-list-alt"></i> Gestión Marca</li>
+            </ul> 
             <ul>
-                <li routerLink="/categoriaForm" class="sidebar-link"><i class="fas fa-user-plus"></i>Categoria form</li>
-                <li routerLink="/categoriaList" class="sidebar-link"><i class="fas fa-plus-circle"></i>Categoria list</li>
-                <li routerLink="/cotizacionForm" class="sidebar-link"><i class="fas fa-address-book"></i> Cotizacion form</li>
-                <li routerLink="/cotizacionList" class="sidebar-link"><i class="fas fa-th-list"></i> Cotizacion list</li>
-                <li routerLink="/departamentosForm" class="sidebar-link"><i class="fas fa-address-book"></i> Departamentos form</li>
-                <li routerLink="/departamentosList" class="sidebar-link"><i class="fas fa-th-list"></i> Departamentos list</li>
-                <li routerLink="/marcaForm" class="sidebar-link"><i class="fas fa-address-book"></i> Marca form</li>
-                <li routerLink="/marcaList" class="sidebar-link"><i class="fas fa-th-list"></i> Marca list</li>
-                <li routerLink="/rolesForm" class="sidebar-link"><i class="fas fa-address-book"></i> Roles form</li>
-                <li routerLink="/rolesList" class="sidebar-link"><i class="fas fa-th-list"></i> Roles list</li>
-                <li routerLink="/servicioForm" class="sidebar-link"><i class="fas fa-address-book"></i> Serivicio form</li>
-                <li routerLink="/servicioList" class="sidebar-link"><i class="fas fa-th-list"></i> Serivicio list</li>
-                <li routerLink="/usuarioForm" class="sidebar-link"><i class="fas fa-address-book"></i> Usuario form</li>
-                <li routerLink="/usuarioList" class="sidebar-link"><i class="fas fa-th-list"></i> Usuario list</li>
-
-
-         
+                <li class="menu-title">Gestión de Ventas y Cotizaciones</li>
+                <li routerLink="/ventasForm" class="sidebar-link"><i class="fas fa-shopping-cart"></i> Registro Ventas</li>
+                <li routerLink="/cotizacionForm" class="sidebar-link"><i class="fas fa-file-invoice"></i> Registro Cotización</li>
+                <li routerLink="/cotizacionList" class="sidebar-link"><i class="fas fa-list-ol"></i> Gestión Cotización</li>
+            </ul>
+            <ul>
+                <li class="menu-title">Gestión de Departamentos y Servicios</li>
+                <li routerLink="/departamentosForm" class="sidebar-link"><i class="fas fa-building"></i> Registro Departamento</li>
+                <li routerLink="/departamentosList" class="sidebar-link"><i class="fas fa-list-alt"></i> Gestión Departamento</li>
+                <li routerLink="/servicioForm" class="sidebar-link"><i class="fas fa-tools"></i> Registro Servicio</li>
+                <li routerLink="/servicioList" class="sidebar-link"><i class="fas fa-list-alt"></i> Gestión Servicio</li>
+            </ul>
+            <ul>
+                <li class="menu-title">Administración de Usuarios</li>
+                <li routerLink="/usuarioForm" class="sidebar-link"><i class="fas fa-user-plus"></i> Registro Usuario</li>
+                <li routerLink="/usuarioList" class="sidebar-link"><i class="fas fa-users"></i> Gestión Usuario</li>
+                <li routerLink="/rolesForm" class="sidebar-link"><i class="fas fa-user-shield"></i> Registro Roles</li>
+                <li routerLink="/rolesList" class="sidebar-link"><i class="fas fa-user-tag"></i> Gestión Roles</li>
+            </ul>
+            
+            <ul>
+                <li class="menu-title">Administración de Clientes</li>
+                <li routerLink="/clientesForm" class="sidebar-link"><i class="fas fa-user-plus"></i> Registro Cliente</li>
+                <li routerLink="/clientesList" class="sidebar-link"><i class="fas fa-users"></i> Gestionar Clientes</li>
+                <!-- <li routerLink="/rolesForm" class="sidebar-link"><i class="fas fa-user-shield"></i> Registro Roles</li>
+                <li routerLink="/rolesList" class="sidebar-link"><i class="fas fa-user-tag"></i> Gestión Roles</li> -->
             </ul>
         </li>
     </ul>

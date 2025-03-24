@@ -1,0 +1,21 @@
+<div class="main-content">
+    <div class="container">
+        <h2>Registrar Venta</h2>
+      
+        <form (ngSubmit)="registrarVenta()">
+          <div *ngFor="let item of detalles; let i = index">
+            <label>Producto:</label>
+            <input type="number" [(ngModel)]="item.IdProducto" name="producto{{i}}" required />
+      
+            <label>Cantidad:</label>
+            <input type="number" [(ngModel)]="item.cantidad" name="cantidad{{i}}" required />
+      
+            <button type="button" (click)="eliminarProducto(i)">Cancelar</button>
+          </div>
+      
+          <button type="button" (click)="agregarProducto()">Agregar Producto</button>
+          <button type="submit" [disabled]="detalles.length === 0">Confirmar Venta</button>
+        </form>
+      </div>
+</div> 
+<app-sidebar></app-sidebar>

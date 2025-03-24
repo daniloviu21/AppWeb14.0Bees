@@ -6,7 +6,10 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class VentaService {
-  private apiUrl = 'http://82.29.197.167:3000/api/ventas'; //api de ventas
+  crearVenta(data: any): Observable<any> {
+    return this.http.post<any>(this.apiUrl, data);
+  }
+  private apiUrl = 'http://82.29.197.167:3000/Servicios#/Ventas'; //api de ventas
 
   constructor(private http: HttpClient) {}
 
