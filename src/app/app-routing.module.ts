@@ -22,6 +22,9 @@ import { RolesListComponent } from './pages/roles-list/roles-list.component';
 import { RolesFormComponent } from './pages/roles-form/roles-form.component';
 import { ServicioFormComponent } from './pages/servicio-form/servicio-form.component';
 import { ServicioListComponent } from './pages/servicio-list/servicio-list.component';
+import { UsuarioListComponent } from './pages/usuario-list/usuario-list.component';
+import { UsuarioFormComponent } from './pages/usuario-form/usuario-form.component';
+
 
 
 const routes: Routes = [
@@ -63,6 +66,10 @@ const routes: Routes = [
   { path: 'servicioForm', component: ServicioFormComponent },
   { path: 'servicioForm/:id', component: ServicioFormComponent },
   { path: 'servicioList', component: ServicioListComponent },
+
+  { path: 'usuarioForm', component: UsuarioFormComponent },
+  { path: 'usuarioForm/:id', component: UsuarioFormComponent },
+  { path: 'usuarioList', component: UsuarioListComponent },
   // Rutas con carga diferida
 ];
 
