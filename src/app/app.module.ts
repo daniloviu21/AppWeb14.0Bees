@@ -34,6 +34,8 @@ import { RolesListComponent } from './pages/roles-list/roles-list.component';
 import { RolesFormComponent } from './pages/roles-form/roles-form.component';
 import { ServicioFormComponent } from './pages/servicio-form/servicio-form.component';
 import { ServicioListComponent } from './pages/servicio-list/servicio-list.component';
+import { UsuarioListComponent } from './pages/usuario-list/usuario-list.component';
+import { UsuarioFormComponent } from './pages/usuario-form/usuario-form.component';
 
 @NgModule({
   declarations: [
@@ -63,6 +65,8 @@ import { ServicioListComponent } from './pages/servicio-list/servicio-list.compo
     RolesFormComponent,
     ServicioFormComponent,
     ServicioListComponent,
+    UsuarioListComponent,
+    UsuarioFormComponent,
 
 
   ],

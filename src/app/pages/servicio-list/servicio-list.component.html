@@ -1,3 +1,31 @@
 <div class="main-content">
+    <div class="container">
+        <h2>Lista de Servicios</h2>
+        <button (click)="router.navigate(['/servicios/nuevo'])">Agregar Servicio</button>
+        
+        <table>
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>Nombre</th>
+              <th>Descripción</th>
+              <th>Precio</th>
+              <th>Acciones</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let servicio of servicios">
+              <td>{{ servicio.id }}</td>
+              <td>{{ servicio.nombreServicio }}</td>
+              <td>{{ servicio.descripcion }}</td>
+              <td>{{ servicio.precio | currency }}</td>
+              <td>
+                <button (click)="editarServicio(servicio.id)">Editar</button>
+                <button (click)="deleteServicio(servicio.id)">Eliminar</button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
 </div> 
 <app-sidebar></app-sidebar>
