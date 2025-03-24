@@ -1,4 +1,31 @@
 <div class="main-content">
-
+    <div class="container">
+        <h2>Lista de Usuarios</h2>
+        <button (click)="navegarANuevoUsuario()">Agregar Usuario</button>
+        
+        <table>
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>Nombre</th>
+              <th>Email</th>
+              <th>Rol</th>
+              <th>Acciones</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let usuario of usuarios">
+              <td>{{ usuario.id }}</td>
+              <td>{{ usuario.nombre }}</td>
+              <td>{{ usuario.email }}</td>
+              <td>{{ usuario.rol }}</td>
+              <td>
+                <button (click)="editarUsuario(usuario.id)">Editar</button>
+                <button (click)="deleteUsuario(usuario.id)">Eliminar</button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
 </div> 
 <app-sidebar></app-sidebar>
