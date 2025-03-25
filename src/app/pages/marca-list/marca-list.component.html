@@ -1,24 +1,48 @@
-<div class="main-content">
-    <table>
+<main class="flex">
+
+  <app-sidebar></app-sidebar>
+
+  <div class="main-content w-full min-h-full flex flex-wrap justify-center items-start">
+    
+    <div class="w-full flex flex-wrap justify-center">
+
+      <div class="flex flex-wrap justify-between w-full">
+
+        <h1 class="w-fit font-bold text-3xl">Lista de marcas</h1>
+
+        <button class="p-10 text-lg bg-yellow-400 ">
+          Agregar marca
+        </button>
+
+    </div>
+
+      <table>
         <thead>
           <tr>
             <th>ID</th>
             <th>Nombre de la Marca</th>
             <th>Acciones</th>
           </tr>
-        </thead>
-        <tbody>
-          <tr *ngFor="let marca of marcas">
-            <td>{{ marca.id }}</td>
-            <td>{{ marca.nombreMarca }}</td>
-            <td>
-              <button class="edit"(click)="editarMarca(marca.id)">Editar</button>
-              <button class="delete" (click)="deleteMarca(marca.id)">Eliminar</button>
-            </td>
-          </tr>
-        </tbody>
+  
+          </thead>
+          
+          <tbody>
+            <tr *ngFor="let marca of marcas">
+              <td>{{ marca.id }}</td>
+              <td>{{ marca.nombreMarca }}</td>
+              <td>
+                <button class="edit"(click)="editarMarca(marca.id)">Editar</button>
+                <button class="delete" (click)="deleteMarca(marca.id)">Eliminar</button>
+              </td>
+            </tr>
+          </tbody>
       </table>
-      
-</div>
 
-<app-sidebar></app-sidebar>
+    </div>
+      
+  </div>
+
+
+
+
+</main>

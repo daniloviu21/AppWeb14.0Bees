@@ -1,4 +1,21 @@
-<div class="main-content">
+<main class="flex">
+
+  <div>
+    <app-sidebar></app-sidebar>
+  </div>
+
+  <div class="main-content w-full flex flex-wrap justify-center items-start">
+
+    <div class="flex flex-wrap justify-between w-full">
+
+      <h1 class="w-fit font-bold text-3xl">Lista de departamentos</h1>
+
+      <button class="p-10 text-lg bg-yellow-400 ">
+        Agregar marca
+      </button>
+
+    </div>
+
     <table>
         <thead>
           <tr>
@@ -18,5 +35,8 @@
           </tr>
         </tbody>
       </table>
-</div>
-<app-sidebar></app-sidebar>
+  </div>
+
+
+
+</main>

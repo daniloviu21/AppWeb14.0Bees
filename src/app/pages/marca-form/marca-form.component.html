@@ -1,10 +1,25 @@
-<div class="main-content">
-    <form [formGroup]="marcaForm" (ngSubmit)="submitForm()">
-        <label for="nombreMarca">Nombre de la Marca:</label>
-        <input id="nombreMarca" formControlName="nombreMarca" required>
-      
-        <button type="submit">Guardar</button>
-      </form>
-</div>
+<main class="flex">
 
-<app-sidebar></app-sidebar>
+  <div>
+    <app-sidebar></app-sidebar>
+  </div>
+
+  <div class="main-content w-full h-min-screen ">
+    <form [formGroup]="marcaForm" (ngSubmit)="submitForm()" class="bg-stone-100 shadow-2xl rounded-md flex flex-wrap justify-center items-center w-2/5 h-1/2 gap-5 p-8">
+  
+      <h1 class="text-3xl">Registra Una Marca</h1>
+
+      <div class="flex flex-wrap w-full gap-2">
+        <label for="nombreMarca" class="w-full text-zinc-500 font-bold text-xl">Nombre de la Marca:</label>
+        <input id="nombreMarca" formControlName="nombreMarca" required class="w-full rounded-md border-slate-400">
+      </div>
+      
+      <div class="w-full flex flex-wrap gap-4 justify-center">
+        <button type="submit" class="p-3 w-3/5  bg-yellow-400 text-zinc-700 text-xl font-bold rounded-md">Guardar</button>
+        <button routerLink="/marcaList" class="p-3 w-3/5 bg-red-600 text-slate-200 text-xl font-bold rounded-md">Cancelar</button>
+      </div>
+    </form>
+  </div>
+
+
+</main>

@@ -1,7 +1,6 @@
 /* 📌 Sidebar fijo con diseño limpio */
 .sidebar {
     width: 300px;
-    height: 100vh;
     background: #1F263E;
     /* Azul oscuro minimalista */
     color: white;

@@ -1,17 +1,26 @@
-<div class="main-content">
-  <form [formGroup]="categoriaForm" (ngSubmit)="guardarCategoria()">
-    <h2>{{ id ? 'Editar' : 'Nueva' }} Categoría</h2>
-    
-    <label>Nombre:</label>
-    <input type="text" formControlName="nombrecategoria" required>
-    
-    <label>Descripción:</label>
-    <textarea formControlName="descripcion" required></textarea>
-    
-    <button class="save">Guardar</button>
-    <button class="cancel">
-      <a routerLink="/categorias">Cancelar</a>
-    </button>
-  </form>
-</div>
-<app-sidebar></app-sidebar>
+<main class="flex">
+
+  <div>
+    <app-sidebar></app-sidebar>
+  </div>
+
+  <div class="main-content w-full h-min-screen">
+    <form [formGroup]="categoriaForm" (ngSubmit)="guardarCategoria()">
+      <h2>{{ id ? 'Editar' : 'Nueva' }} Categoría</h2>
+      
+      <label>Nombre:</label>
+      <input type="text" formControlName="nombrecategoria" required>
+      
+      <label>Descripción:</label>
+      <textarea formControlName="descripcion" required></textarea>
+      
+      <button class="save">Guardar</button>
+      <button class="cancel">
+        <a routerLink="/categorias">Cancelar</a>
+      </button>
+    </form>
+  </div>
+  
+
+</main>
+
