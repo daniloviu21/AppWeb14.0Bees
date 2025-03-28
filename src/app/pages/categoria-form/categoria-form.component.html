@@ -1,10 +1,10 @@
-<main class="flex">
+<main class="grid grid-cols-12 justify-center">
 
-  <div>
+  <div class="col-span-3">
     <app-sidebar></app-sidebar>
   </div>
 
-  <div class="main-content w-full h-min-screen">
+  <div class="main-content col-span-9 h-min-screen flex justify-center">
     <form [formGroup]="categoriaForm" (ngSubmit)="guardarCategoria()">
       <h2>{{ id ? 'Editar' : 'Nueva' }} Categoría</h2>
       

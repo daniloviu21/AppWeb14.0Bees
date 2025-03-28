@@ -1,110 +1,113 @@
-<main class="flex">
+<main class="grid grid-cols-12 justify-center">
 
-  <div>
+  <div class=" bg-red-300 col-span-3">
     <app-sidebar class=""></app-sidebar>
   </div>
 
-  <div class="main-content w-full">
+  <div class="main-content col-span-9">
     <div class="content-wrapper">
 
-        <!--Seccion del navbar-->
-        <div class="color-nav">
-            <nav class="navbar">
-                <div class="logo">VANGUARD</div>
-                <div class="nav-icons">
-                    <div class="notification"><i class="fas fa-exclamation-triangle"></i><span class="badge">7</span></div>
-                    <div class="notification"><i class="fas fa-bell"></i></div>
-                    <div class="notification"><i class="fas fa-envelope"></i></div>
-                    <div class="user-info">Admin <span class="username">Taylor Franklin</span></div>
-                </div>
-            </nav>
-            <div class="dashboard-content">
-                <div class="card"><p>Ventas</p> <h2>543</h2> </div>
-                <div class="card"> <p>Pedidos</p> <h2>123</h2> </div>
-                <div class="card highlight"> <p>Tickets</p> <h2>657</h2> <span class="badge-percent">+18%</span> </div>
-                <div class="card highlight"> <p>Alertas</p> <h2>345</h2> <span class="badge-percent">+24%</span> </div>
-            </div>
-        </div>
+      <!--Seccion del navbar-->
+      <div class="color-nav">
+          <nav class="navbar">
+              <div class="logo">VANGUARD</div>
+              <div class="nav-icons">
+                  <div class="notification"><i class="fas fa-exclamation-triangle"></i><span class="badge">7</span></div>
+                  <div class="notification"><i class="fas fa-bell"></i></div>
+                  <div class="notification"><i class="fas fa-envelope"></i></div>
+                  <div class="user-info">Admin <span class="username">Taylor Franklin</span></div>
+              </div>
+          </nav>
+          <div class="dashboard-content">
+              <div class="card"><p>Ventas</p> <h2>543</h2> </div>
+              <div class="card"> <p>Pedidos</p> <h2>123</h2> </div>
+              <div class="card highlight"> <p>Tickets</p> <h2>657</h2> <span class="badge-percent">+18%</span> </div>
+              <div class="card highlight"> <p>Alertas</p> <h2>345</h2> <span class="badge-percent">+24%</span> </div>
+          </div>
+      </div>
 
-        <!--otraseccion-->
-        <div class="dashboard-container">
-            <div class="orders-section">
-              <h3>Órdenes</h3>
-              <div class="order-card" *ngFor="let order of orders">
-                <img [src]="order.image" alt="Product Image" class="order-img" />
-                <div class="order-details">
-                  <h4>{{ order.title }}</h4>
-                  <p>{{ order.description }}</p>
-                  <small>{{ order.time }}</small>
-                </div>
+      <!--otraseccion-->
+      <div class="dashboard-container">
+          <div class="orders-section">
+            <h3>Órdenes</h3>
+            <div class="order-card" *ngFor="let order of orders">
+              <img [src]="order.image" alt="Product Image" class="order-img" />
+              <div class="order-details">
+                <h4>{{ order.title }}</h4>
+                <p>{{ order.description }}</p>
+                <small>{{ order.time }}</small>
               </div>
             </div>
-          
-            <div class="activity-section">
-              <h3>Actividad</h3>
-              <div class="activity-card" *ngFor="let payment of payments">
-                <img [src]="payment.avatar" alt="User Avatar" class="avatar" />
-                <div class="activity-details">
-                  <h4>{{ payment.name }}</h4>
-                  <small>{{ payment.time }}</small>
-                  <p>{{ payment.description }}</p>
-                  <span class="status" [ngClass]="{'sent': payment.description.includes('Pendiente'), 'paid': payment.description.includes('realizado')}">
-                    {{ payment.description.includes('Pendiente') ? 'Pendiente' : 'Pagado' }}
-                  </span>
-                </div>
-              </div>
-            </div>
-          
-            <div class="transactions-section">
-              <h3>Transacciones</h3>
-              <div class="transaction-card" *ngFor="let transaction of transactions">
-
-                <div class="transaction-details">
-                  <h4>{{ transaction.title }}</h4>
-                  <p>{{ transaction.description }}</p>
-                </div>
-                <span class="transaction-amount" [ngClass]="transaction.amount > 0 ? 'positive' : 'negative'">
-                  {{ transaction.amount | currency:'USD' }}
+          </div>
+        
+          <div class="activity-section">
+            <h3>Actividad</h3>
+            <div class="activity-card" *ngFor="let payment of payments">
+              <img [src]="payment.avatar" alt="User Avatar" class="avatar" />
+              <div class="activity-details">
+                <h4>{{ payment.name }}</h4>
+                <small>{{ payment.time }}</small>
+                <p>{{ payment.description }}</p>
+                <span class="status" [ngClass]="{'sent': payment.description.includes('Pendiente'), 'paid': payment.description.includes('realizado')}">
+                  {{ payment.description.includes('Pendiente') ? 'Pendiente' : 'Pagado' }}
                 </span>
               </div>
             </div>
-          </div>          
-        
-          <div class="orders-container">
-            <h2>Pedidos</h2>
-            <table>
-              <thead>
-                <tr>
-                  <th>Cliente</th>
-                  <th>Producto</th>
-                  <th>ID de Usuario</th>
-                  <th>Fecha de Pedido</th>
-                  <th>Monto</th>
-                  <th>Estado de Pago</th>
-                  <th>Estado del Pedido</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr *ngFor="let pedido of pedidos">
-                  <td>
-                    <img [src]="pedido.clienteImagen" [alt]="pedido.clienteNombre">
-                    {{ pedido.clienteNombre }}
-                  </td>
-                  <td>
-                    <img [src]="pedido.productoImagen" [alt]="pedido.productoNombre">
-                    {{ pedido.productoNombre }}
-                  </td>
-                  <td>{{ pedido.usuarioID }}</td>
-                  <td>{{ pedido.fecha }}</td>
-                  <td>{{ pedido.monto | currency }}</td>
-                  <td [ngClass]="pedido.estadoPagoClase">{{ pedido.estadoPago }}</td>
-                  <td [ngClass]="pedido.estadoPedidoClase">{{ pedido.estadoPedido }}</td>
-                </tr>
-              </tbody>
-            </table>
           </div>
+        
+          <div class="transactions-section">
+            <h3>Transacciones</h3>
+            <div class="transaction-card" *ngFor="let transaction of transactions">
+
+              <div class="transaction-details">
+                <h4>{{ transaction.title }}</h4>
+                <p>{{ transaction.description }}</p>
+              </div>
+              <span class="transaction-amount" [ngClass]="transaction.amount > 0 ? 'positive' : 'negative'">
+                {{ transaction.amount | currency:'USD' }}
+              </span>
+            </div>
+          </div>
+        </div>          
+      
+        <div class="orders-container">
+          <h2>Pedidos</h2>
+          <table>
+            <thead>
+              <tr>
+                <th>Cliente</th>
+                <th>Producto</th>
+                <th>ID de Usuario</th>
+                <th>Fecha de Pedido</th>
+                <th>Monto</th>
+                <th>Estado de Pago</th>
+                <th>Estado del Pedido</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let pedido of pedidos">
+                <td>
+                  <img [src]="pedido.clienteImagen" [alt]="pedido.clienteNombre">
+                  {{ pedido.clienteNombre }}
+                </td>
+                <td>
+                  <img [src]="pedido.productoImagen" [alt]="pedido.productoNombre">
+                  {{ pedido.productoNombre }}
+                </td>
+                <td>{{ pedido.usuarioID }}</td>
+                <td>{{ pedido.fecha }}</td>
+                <td>{{ pedido.monto | currency }}</td>
+                <td [ngClass]="pedido.estadoPagoClase">{{ pedido.estadoPago }}</td>
+                <td [ngClass]="pedido.estadoPedidoClase">{{ pedido.estadoPedido }}</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
   </div>
+
   </div>
+
+
   
   
 </main>
