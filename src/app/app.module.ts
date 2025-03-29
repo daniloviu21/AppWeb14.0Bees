@@ -39,6 +39,14 @@ import { UsuarioFormComponent } from './pages/usuario-form/usuario-form.componen
 import { VentasFormComponent } from './pages/ventas-form/ventas-form.component';
 import { ClientesListComponent } from './pages/clientes-list/clientes-list.component';
 import { ClientesFormComponent } from './pages/clientes-form/clientes-form.component';
+import { PedidoFormComponent } from './pages/pedido-form/pedido-form.component';
+import { PedidoListComponent } from './pages/pedido-list/pedido-list.component';
+import { ProductosFormComponent } from './pages/productos-form/productos-form.component';
+import { ProductosListComponent } from './pages/productos-list/productos-list.component';
+import { EmpleadosListComponent } from './pages/empleados-list/empleados-list.component';
+import { EmpleadosFormComponent } from './pages/empleados-form/empleados-form.component';
+import { ClienteListComponent } from './pages/cliente-list/cliente-list.component';
+import { ClienteFormComponent } from './pages/cliente-form/cliente-form.component';
 
 @NgModule({
   declarations: [
@@ -73,6 +81,14 @@ import { ClientesFormComponent } from './pages/clientes-form/clientes-form.compo
     VentasFormComponent,
     ClientesListComponent,
     ClientesFormComponent,
+    PedidoFormComponent,
+    PedidoListComponent,
+    ProductosFormComponent,
+    ProductosListComponent,
+    EmpleadosListComponent,
+    EmpleadosFormComponent,
+    ClienteListComponent,
+    ClienteFormComponent,
 
   ],
   imports: [

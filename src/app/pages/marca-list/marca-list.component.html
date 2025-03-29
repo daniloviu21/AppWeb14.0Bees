@@ -1,8 +1,11 @@
-<main class="flex">
+<main class="grid grid-cols-12 justify-center">
 
-  <app-sidebar></app-sidebar>
+  <div class="col-span-3">
+    <app-sidebar></app-sidebar>
+  </div>
 
-  <div class="main-content w-full min-h-full flex flex-wrap justify-center items-start">
+
+  <div class="main-content w-full min-h-full flex flex-wrap justify-center items-start col-span-9">
     
     <div class="w-full flex flex-wrap justify-center">
 
@@ -10,7 +13,7 @@
 
         <h1 class="w-fit font-bold text-3xl">Lista de marcas</h1>
 
-        <button class="p-10 text-lg bg-yellow-400 ">
+        <button class="p-10 text-lg bg-yellow-400 " routerLink="/marcaForm">
           Agregar marca
         </button>
 
@@ -29,9 +32,9 @@
           <tbody>
             <tr *ngFor="let marca of marcas">
               <td>{{ marca.id }}</td>
-              <td>{{ marca.nombreMarca }}</td>
+              <td>{{ marca.nombremarca }}</td>
               <td>
-                <button class="edit"(click)="editarMarca(marca.id)">Editar</button>
+                <button class="edit" routerLink="/marcaForm/{{marca.id}}/{{marca.nombremarca}}">Editar</button>
                 <button class="delete" (click)="deleteMarca(marca.id)">Eliminar</button>
               </td>
             </tr>

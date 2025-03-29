@@ -1,10 +1,10 @@
-<main class="flex">
+<main class="grid grid-cols-12 justify-center">
 
-  <div>
+  <div class="col-span-3">
     <app-sidebar></app-sidebar>
   </div>
 
-  <div class="main-content w-full h-min-screen ">
+  <div class="main-content w-full h-min-screen col-span-9 ">
     <form [formGroup]="marcaForm" (ngSubmit)="submitForm()" class="bg-stone-100 shadow-2xl rounded-md flex flex-wrap justify-center items-center w-2/5 h-1/2 gap-5 p-8">
   
       <h1 class="text-3xl">Registra Una Marca</h1>

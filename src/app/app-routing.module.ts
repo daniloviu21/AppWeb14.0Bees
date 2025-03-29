@@ -27,7 +27,11 @@ import { UsuarioFormComponent } from './pages/usuario-form/usuario-form.componen
 import { VentasFormComponent } from './pages/ventas-form/ventas-form.component';
 import { ClientesListComponent } from './pages/clientes-list/clientes-list.component';
 import { ClientesFormComponent } from './pages/clientes-form/clientes-form.component';
-
+import { AuthService } from './services/auth.service'; 
+import { EmpleadosFormComponent } from './pages/empleados-form/empleados-form.component';
+import { EmpleadosListComponent } from './pages/empleados-list/empleados-list.component';
+import { ProductosFormComponent } from './pages/productos-form/productos-form.component';
+import { ProductosListComponent } from './pages/productos-list/productos-list.component';
 
 
 const routes: Routes = [
@@ -35,18 +39,18 @@ const routes: Routes = [
   { path: '', redirectTo: '/login', pathMatch: 'full' },
 
   // Rutas existentes
-  { path: 'dashboard', component: DashboardComponent },
-  { path: 'home', component: HomeComponent },
-  { path: 'login', component: LoginPageComponent },
-  { path: 'register', component: RegisterPageComponent },
-  { path: 'managementuser', component: UserComponent },
-  { path: 'managementproduct', component: ProductComponent },
-  { path: 'managementpedidos', component: PedidosComponent },
-  { path: 'registro-usuarios', component: RegistroUsuariosComponent  },
-  { path: 'registro-productos', component: RegistroProductoComponent  },
+  { path: 'dashboard', component: DashboardComponent, canActivate: [AuthService]},
+  { path: 'home', component: HomeComponent, canActivate: [AuthService] },
+  { path: 'login', component: LoginPageComponent},
+  { path: 'register', component: RegisterPageComponent, canActivate: [AuthService] },
+  { path: 'managementuser', component: UserComponent, canActivate: [AuthService] },
+  { path: 'managementproduct', component: ProductComponent, canActivate: [AuthService] },
+  { path: 'managementpedidos', component: PedidosComponent, canActivate: [AuthService] },
+  { path: 'registro-usuarios', component: RegistroUsuariosComponent, canActivate: [AuthService]  },
+  { path: 'registro-productos', component: RegistroProductoComponent, canActivate: [AuthService]  },
 
 
-  { path: 'categoriaForm', component: CategoriaFormComponent }, // Asegurar que coincide con el router.navigate
+  { path: 'categoriaForm', component: CategoriaFormComponent, canActivate: [AuthService] }, // Asegurar que coincide con el router.navigate
   { path: 'categoriaForm/:id', component: CategoriaFormComponent },
   { path: 'categoriaList', component: CategoriaListComponent },
 
@@ -59,7 +63,7 @@ const routes: Routes = [
   { path: 'departamentosList', component: DepartamentosListComponent },
 
   { path: 'marcaForm', component: MarcaFormComponent },
-  { path: 'marcaForm/:id', component: MarcaFormComponent },
+  { path: 'marcaForm/:id/:nombre', component: MarcaFormComponent },
   { path: 'marcaList', component: MarcaListComponent },
 
   { path: 'rolesForm', component: RolesFormComponent },
@@ -80,6 +84,18 @@ const routes: Routes = [
   { path: 'clientesForm', component: ClientesFormComponent },
   { path: 'clientesForm/:id', component: ClientesFormComponent },
   { path: 'clientesList', component: ClientesListComponent },
+
+  { path: 'empleadosForm', component: EmpleadosFormComponent },
+  { path: 'empleadosForm/:id', component: EmpleadosFormComponent },
+  { path: 'empleadosList', component: EmpleadosListComponent },
+
+  { path: 'productosForm', component: ProductosFormComponent },
+  { path: 'productosForm/:id', component: ProductosFormComponent },
+  { path: 'productosList', component: ProductosListComponent },
+
+  { path: 'pedidosForm', component: PedidosComponent },
+  { path: 'pedidosForm/:id', component: PedidosComponent },
+  { path: 'pedidosList', component: PedidosComponent },
 
   // Rutas con carga diferida
 ];

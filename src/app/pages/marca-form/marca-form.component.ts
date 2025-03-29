@@ -13,6 +13,7 @@ import { MarcaService } from '../../services/marca.service';
 export class MarcaFormComponent implements OnInit {
   marcaForm: FormGroup;
   marcaId: number | null = null;
+  nombreMarca: string | null = null;
 
   constructor(
     private fb: FormBuilder,
@@ -27,11 +28,20 @@ export class MarcaFormComponent implements OnInit {
 
   ngOnInit(): void {
     this.marcaId = Number(this.route.snapshot.paramMap.get('id'));
-    if (this.marcaId) {
-      this.marcaService.getMarcaById(this.marcaId).subscribe(data => {
-        this.marcaForm.patchValue(data);
-      });
-    }
+    this.nombreMarca = String(this.route.snapshot.paramMap.get('nombre'));
+
+    var datos = {
+      nombreMarca: this.nombreMarca
+
+    };
+
+    this.marcaForm.patchValue(datos);
+
+    // if (this.marcaId) {
+    //   this.marcaService.getMarcaById(this.marcaId).subscribe(data => {
+    //     this.marcaForm.patchValue(data);
+    //   });
+    // }
   }
 
   submitForm(): void {

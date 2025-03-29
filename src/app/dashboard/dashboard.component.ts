@@ -79,9 +79,9 @@ export class DashboardComponent implements OnInit {
     this.pedidos = [
       {
         clienteNombre: 'Ellie Collins',
-        clienteImagen: 'assets/cliente1.jpg',
+        clienteImagen: 'profile.png',
         productoNombre: 'Anuncio publicitario',
-        productoImagen: 'assets/producto1.jpg',
+        productoImagen: 'service1.jpg',
         usuarioID: '20233L166',
         fecha: '15/03/2025',
         monto: 9800,
@@ -92,9 +92,9 @@ export class DashboardComponent implements OnInit {
       },
       {
         clienteNombre: 'Sophie Nguyen',
-        clienteImagen: 'assets/cliente2.jpg',
+        clienteImagen: 'profile.png',
         productoNombre: 'Rotulacion carro',
-        productoImagen: 'assets/producto2.jpg',
+        productoImagen: 'service1.jpg',
         usuarioID: '20223L062',
         fecha: '15/03/2025',
         monto: 3234,
@@ -105,9 +105,9 @@ export class DashboardComponent implements OnInit {
       },
       {
         clienteNombre: 'Darcy Ryan',
-        clienteImagen: 'assets/cliente3.jpg',
+        clienteImagen: 'profile.png',
         productoNombre: 'Estampado camisa',
-        productoImagen: 'assets/producto3.jpg',
+        productoImagen: 'service2.jpg',
         usuarioID: '20233L047',
         fecha: '15/03/2025',
         monto: 250.00,
@@ -134,21 +134,21 @@ export class DashboardComponent implements OnInit {
         description: 'Nuevo pedido recibido',
         time: 'hace 2 minutos',
         discount: 20,
-        image: 'assets/speaker.png'
+        image: 'service1.jpg'
       },
       {
         title: 'Head Massage',
         description: 'Nuevo pedido recibido',
         time: 'hace 3 minutos',
         discount: 30,
-        image: 'assets/head-massage.png'
+        image: 'service1.jpg'
       },
       {
         title: 'Game Box',
         description: 'Nuevo pedido recibido',
         time: 'hace 5 minutos',
         discount: 60,
-        image: 'assets/game-box.png'
+        image: 'service2.jpg'
       }
     ];
   }
@@ -159,19 +159,19 @@ export class DashboardComponent implements OnInit {
         name: 'Christian Ochoa',
         description: 'Pago pendiente. #26788',
         time: 'hace 3 minutos',
-        avatar: 'assets/user1.png'
+        avatar: 'profile.png'
       },
       {
         name: 'Socorro Decker',
         description: 'Pago realizado #23457',
         time: 'hace 7 minutos',
-        avatar: 'assets/user2.png'
+        avatar: 'profile.png'
       },
       {
         name: 'Haywood Sharp',
         description: '',
         time: 'hace 16 horas',
-        avatar: 'assets/user3.png'
+        avatar: 'profile.png'
       }
     ];
   }

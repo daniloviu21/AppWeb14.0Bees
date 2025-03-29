@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { PedidosService } from '../../../services/pedidos.service';
 
 @Component({
   selector: 'app-pedidos',
@@ -12,6 +13,24 @@ export class PedidosComponent {
     { id: 2, cliente: 'María Gómez', total: 2500, estado: 'Enviado' },
     { id: 3, cliente: 'Carlos López', total: 1800, estado: 'Entregado' }
   ];
+
+  constructor(
+    private pedidoService: PedidosService
+  ){
+
+  }
+
+  ngOnInit(){
+    this.pedidoService.getPedidos().subscribe({
+      next: (data) => {
+        this.pedidos = data;
+      },
+      error: (error) => {
+        console.error('Error al obtener pedidos:', error);
+      }
+    });
+  
+  }
 
   editarPedido(id: number) {
     alert(`Editar pedido con ID: ${id}`);
