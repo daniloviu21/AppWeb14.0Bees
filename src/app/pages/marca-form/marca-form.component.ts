@@ -28,14 +28,19 @@ export class MarcaFormComponent implements OnInit {
 
   ngOnInit(): void {
     this.marcaId = Number(this.route.snapshot.paramMap.get('id'));
-    this.nombreMarca = String(this.route.snapshot.paramMap.get('nombre'));
 
-    var datos = {
-      nombreMarca: this.nombreMarca
 
-    };
+    if(this.route.snapshot.paramMap.get('nombre')){
+      this.nombreMarca = String(this.route.snapshot.paramMap.get('nombre'));
 
-    this.marcaForm.patchValue(datos);
+      var datos = {
+        nombreMarca: this.nombreMarca
+      };
+  
+      this.marcaForm.patchValue(datos);
+    }
+
+
 
     // if (this.marcaId) {
     //   this.marcaService.getMarcaById(this.marcaId).subscribe(data => {
@@ -48,11 +53,11 @@ export class MarcaFormComponent implements OnInit {
     if (this.marcaForm.valid) {
       if (this.marcaId) {
         this.marcaService.updateMarca(this.marcaId, this.marcaForm.value).subscribe(() => {
-          this.router.navigate(['/marcas']);
+          this.router.navigate(['/marcaList']);
         });
       } else {
         this.marcaService.createMarca(this.marcaForm.value).subscribe(() => {
-          this.router.navigate(['/marcas']);
+          this.router.navigate(['/marcaList']);
         });
       }
     }

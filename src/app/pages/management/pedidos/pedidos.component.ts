@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { PedidosService } from '../../../services/pedidos.service';
+import { ClientesService } from '../../../services/clientes.service';
 
 @Component({
   selector: 'app-pedidos',
@@ -9,13 +10,22 @@ import { PedidosService } from '../../../services/pedidos.service';
 })
 export class PedidosComponent {
   pedidos = [
-    { id: 1, cliente: 'Juan Pérez', total: 1500, estado: 'Pendiente' },
-    { id: 2, cliente: 'María Gómez', total: 2500, estado: 'Enviado' },
-    { id: 3, cliente: 'Carlos López', total: 1800, estado: 'Entregado' }
+    { id: 1, idcliente: 0, nombreCliente: ' ', total: 1500, estado: 'Pendiente' },
+    { id: 2, idcliente: 0, nombreCliente: ' ', total: 2500, estado: 'Enviado' },
+    { id: 3, idcliente: 0, nombreCliente: ' ', total: 1800, estado: 'Entregado' }
+  ];
+
+  clientes = [
+    {
+      id: 0,
+      nombrecliente: ' '
+
+    }
   ];
 
   constructor(
-    private pedidoService: PedidosService
+    private pedidoService: PedidosService,
+    private clienteService: ClientesService
   ){
 
   }
@@ -24,9 +34,23 @@ export class PedidosComponent {
     this.pedidoService.getPedidos().subscribe({
       next: (data) => {
         this.pedidos = data;
+        console.log(this.pedidos);
       },
       error: (error) => {
         console.error('Error al obtener pedidos:', error);
+      }
+    });
+
+    this.clienteService.getClientes().subscribe({
+      next: (data) => {
+        this.clientes = data;
+        for(var i = 0; i < this.pedidos.length; i++){
+          this.pedidos[i].nombreCliente = this.clientes.find(cliente => cliente.id === this.pedidos[i].idcliente)!.nombrecliente;
+        }
+        console.log(this.clientes);
+      },
+      error: (error) => {
+        console.error('Error al obtener clientes:', error);
       }
     });
   

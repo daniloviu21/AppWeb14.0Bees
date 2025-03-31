@@ -13,6 +13,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 export class DepartamentosFormComponent implements OnInit {
   departamentoForm: FormGroup;
   departamentoId: number | null = null;
+  departamentoNombre: String | null = '';
 
   constructor(
     private fb: FormBuilder,
@@ -29,11 +30,11 @@ export class DepartamentosFormComponent implements OnInit {
     if (this.departamentoForm.valid) {
       if (this.departamentoId) {
         this.departamentoService.updateDepartamento(this.departamentoId, this.departamentoForm.value).subscribe(() => {
-          this.router.navigate(['/departamentos']);
+          this.router.navigate(['/departamentosList']);
         });
       } else {
         this.departamentoService.createDepartamento(this.departamentoForm.value).subscribe(() => {
-          this.router.navigate(['/departamentos']);
+          this.router.navigate(['/departamentosList']);
         });
       }
     }
@@ -41,10 +42,17 @@ export class DepartamentosFormComponent implements OnInit {
 
   ngOnInit(): void {
     this.departamentoId = Number(this.route.snapshot.paramMap.get('id'));
-    if (this.departamentoId) {
-      this.departamentoService.getDepartamentoById(this.departamentoId).subscribe(data => {
-        this.departamentoForm.patchValue(data);
-      });
+
+    if(this.route.snapshot.paramMap.get('nombre')){
+      this.departamentoNombre = String(this.route.snapshot.paramMap.get('nombre'))
+
+      var data = {
+        nombreDepartamento: this.departamentoNombre
+      }
+  
+      this.departamentoForm.patchValue(data);
     }
+    
+
   }
 }

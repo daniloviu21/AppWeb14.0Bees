@@ -15,12 +15,12 @@
                   <!-- <div class="notification"><i class="fas fa-exclamation-triangle"></i><span class="badge">7</span></div>
                   <div class="notification"><i class="fas fa-bell"></i></div>
                   <div class="notification"><i class="fas fa-envelope"></i></div> -->
-                  <div class="user-info">Admin <span class="username">Daniel</span></div>
+                  <div class="user-info">Admin <span class="username">Dani</span></div>
               </div>
           </nav>
           <div class="dashboard-content">
-              <div class="card"><p>Ventas</p> <h2>0</h2> </div>
-              <div class="card"> <p>Pedidos</p> <h2>3</h2> </div>
+              <div class="card"><p>Ventas</p> <h2>{{pedidoos.length}}</h2> </div>
+              <div class="card"> <p>Pedidos</p> <h2>{{pedidoos.length}}</h2></div>
               <!-- <div class="card highlight"> <p>Tickets</p> <h2>657</h2> <span class="badge-percent">+18%</span> </div> -->
               <!-- <div class="card highlight"> <p>Alertas</p> <h2>345</h2> <span class="badge-percent">+24%</span> </div> -->
           </div>
@@ -30,32 +30,33 @@
       <div class="dashboard-container">
           <div class="orders-section">
             <h3>Órdenes</h3>
-            <div class="order-card" *ngFor="let order of orders">
-              <img [src]="order.image" alt="Product Image" class="order-img" />
+            <div class="order-card" *ngFor="let pedido of pedidoos">
+              <img src="service1.jpg" alt="Product Image" class="order-img" />
               <div class="order-details">
-                <h4>{{ order.title }}</h4>
-                <p>{{ order.description }}</p>
-                <small>{{ order.time }}</small>
+                <h4>{{ pedido.nombreCliente }}</h4>
+                <p>{{ pedido.estado }}</p>
+                <small>{{ pedido.fecha }}</small>
               </div>
             </div>
           </div>
         
           <div class="activity-section">
             <h3>Actividad</h3>
-            <div class="activity-card" *ngFor="let payment of payments">
-              <img [src]="payment.avatar" alt="User Avatar" class="avatar" />
+            <div class="activity-card" *ngFor="let pedido of pedidoos">
+              <img src="profile.png" alt="User Avatar" class="avatar" />
               <div class="activity-details">
-                <h4>{{ payment.name }}</h4>
-                <small>{{ payment.time }}</small>
-                <p>{{ payment.description }}</p>
-                <span class="status" [ngClass]="{'sent': payment.description.includes('Pendiente'), 'paid': payment.description.includes('realizado')}">
-                  {{ payment.description.includes('Pendiente') ? 'Pendiente' : 'Pagado' }}
+                <h4>{{ pedido.nombreCliente }}</h4>
+                <small>{{ pedido.total }}</small>
+                <br>
+                <!-- <p>{{ payment.description }}</p> -->
+                <span class="status" [ngClass]="{'sent': pedido.estado.includes('Pendiente'), 'paid': pedido.estado.includes('realizado')}">
+                  {{ pedido.estado }}
                 </span>
               </div>
             </div>
           </div>
         
-          <div class="transactions-section">
+          <!-- <div class="transactions-section">
             <h3>Transacciones</h3>
             <div class="transaction-card" *ngFor="let transaction of transactions">
 
@@ -67,7 +68,7 @@
                 {{ transaction.amount | currency:'USD' }}
               </span>
             </div>
-          </div>
+          </div> -->
         </div>          
       
         <div class="orders-container">
@@ -85,20 +86,20 @@
               </tr>
             </thead>
             <tbody>
-              <tr *ngFor="let pedido of pedidos">
+              <tr *ngFor="let pedido of pedidoos">
                 <td>
-                  <img [src]="pedido.clienteImagen" [alt]="pedido.clienteNombre">
-                  {{ pedido.clienteNombre }}
+                  <img src="profile.png" [alt]="pedido.nombreCliente">
+                  {{ pedido.nombreCliente }}
                 </td>
                 <td>
-                  <img [src]="pedido.productoImagen" [alt]="pedido.productoNombre">
-                  {{ pedido.productoNombre }}
+                  <img src="service1.jpg" >
+                  <!-- {{ pedido.productoNombre }} -->
                 </td>
-                <td>{{ pedido.usuarioID }}</td>
+                <td>{{ pedido.idcliente }}</td>
                 <td>{{ pedido.fecha }}</td>
-                <td>{{ pedido.monto | currency }}</td>
-                <td [ngClass]="pedido.estadoPagoClase">{{ pedido.estadoPago }}</td>
-                <td [ngClass]="pedido.estadoPedidoClase">{{ pedido.estadoPedido }}</td>
+                <td>{{ pedido.total | currency }}</td>
+                <td [ngClass]="pedido.estado">{{ pedido.estado }}</td>
+                <td [ngClass]="pedido.estado">{{ pedido.estado }}</td>
               </tr>
             </tbody>
           </table>

@@ -42,7 +42,7 @@ const routes: Routes = [
   { path: 'dashboard', component: DashboardComponent, canActivate: [AuthService]},
   { path: 'home', component: HomeComponent, canActivate: [AuthService] },
   { path: 'login', component: LoginPageComponent},
-  { path: 'register', component: RegisterPageComponent, canActivate: [AuthService] },
+  { path: 'register', component: RegisterPageComponent },
   { path: 'managementuser', component: UserComponent, canActivate: [AuthService] },
   { path: 'managementproduct', component: ProductComponent, canActivate: [AuthService] },
   { path: 'managementpedidos', component: PedidosComponent, canActivate: [AuthService] },
@@ -59,7 +59,7 @@ const routes: Routes = [
   { path: 'cotizacionList', component: CotizacionListComponent },
 
   { path: 'departamentosForm', component: DepartamentosFormComponent },
-  { path: 'departamentosForm/:id', component: DepartamentosFormComponent },
+  { path: 'departamentosForm/:id/:nombre', component: DepartamentosFormComponent },
   { path: 'departamentosList', component: DepartamentosListComponent },
 
   { path: 'marcaForm', component: MarcaFormComponent },
@@ -91,7 +91,7 @@ const routes: Routes = [
 
   { path: 'productosForm', component: ProductosFormComponent },
   { path: 'productosForm/:id', component: ProductosFormComponent },
-  { path: 'productosList', component: ProductosListComponent },
+  { path: 'productosList', component: ProductComponent },
 
   { path: 'pedidosForm', component: PedidosComponent },
   { path: 'pedidosForm/:id', component: PedidosComponent },

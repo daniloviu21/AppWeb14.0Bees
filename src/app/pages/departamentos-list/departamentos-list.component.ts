@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { DepartamentoService } from '../../services/departamento.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-departamentos-list',
@@ -10,7 +11,9 @@ import { DepartamentoService } from '../../services/departamento.service';
 export class DepartamentosListComponent implements OnInit {
   departamentos: any[] = [];
 
-  constructor(private departamentoService: DepartamentoService) {}
+  constructor(private departamentoService: DepartamentoService,
+    private router: Router
+  ) {}
 
   ngOnInit(): void {
     this.loadDepartamentos();
@@ -19,18 +22,19 @@ export class DepartamentosListComponent implements OnInit {
   loadDepartamentos(): void {
     this.departamentoService.getDepartamentos().subscribe(data => {
       this.departamentos = data;
+      console.log(this.departamentos);
     });
   }
 
-  editarDepartamento(id: number): void {
+  editarDepartamento(id: number, nombre: string): void {
     // Add logic for editing a department
-    console.log('Editar departamento con ID:', id);
+    this.router.navigate(['/departamentosForm/', id, nombre]);
   }
 
   deleteDepartamento(id: number): void {
     if (confirm('¿Seguro que deseas eliminar este departamento?')) {
       this.departamentoService.deleteDepartamento(id).subscribe(() => {
-        this.loadDepartamentos();
+        this.router.navigate(['/departamentosList']);
       });
     }
   }

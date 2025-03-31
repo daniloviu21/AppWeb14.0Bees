@@ -11,7 +11,7 @@
 
       <div class="flex flex-wrap justify-between w-full">
 
-        <h1 class="w-fit font-bold text-3xl">Lista de marcas</h1>
+        <h1 class="w-fit font-bold text-3xl">Lista de Marcas</h1>
 
         <button class="p-10 text-lg bg-yellow-400 " routerLink="/marcaForm">
           Agregar marca
@@ -31,9 +31,9 @@
           
           <tbody>
             <tr *ngFor="let marca of marcas">
-              <td>{{ marca.id }}</td>
-              <td>{{ marca.nombremarca }}</td>
-              <td>
+              <td *ngIf="marca.deleted_at == null">{{ marca.id }}</td>
+              <td *ngIf="marca.deleted_at == null">{{ marca.nombremarca }}</td>
+              <td *ngIf="marca.deleted_at == null">
                 <button class="edit" routerLink="/marcaForm/{{marca.id}}/{{marca.nombremarca}}">Editar</button>
                 <button class="delete" (click)="deleteMarca(marca.id)">Eliminar</button>
               </td>

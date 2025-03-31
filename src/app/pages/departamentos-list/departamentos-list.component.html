@@ -8,10 +8,10 @@
 
     <div class="flex flex-wrap justify-between w-full">
 
-      <h1 class="w-fit font-bold text-3xl">Lista de departamentos</h1>
+      <h1 class="w-fit font-bold text-3xl">Lista de Departamentos</h1>
 
-      <button class="p-10 text-lg bg-yellow-400 ">
-        Agregar marca
+      <button routerLink="/departamentosForm" class="p-10 text-lg bg-yellow-400">
+        Agregar departamento
       </button>
 
     </div>
@@ -26,11 +26,11 @@
         </thead>
         <tbody>
           <tr *ngFor="let departamento of departamentos">
-            <td>{{ departamento.id }}</td>
-            <td>{{ departamento.nombreDepartamento }}</td>
-            <td>
-              <button (click)="editarDepartamento(departamento.id)">Editar</button>
-              <button (click)="deleteDepartamento(departamento.id)">Eliminar</button>
+            <td *ngIf="departamento.deleted_at == null">{{ departamento.id}}</td>
+            <td *ngIf="departamento.deleted_at == null">{{ departamento.nombredepartamento }}</td>
+            <td *ngIf="departamento.deleted_at == null">
+              <button (click)="editarDepartamento(departamento.id, departamento.nombredepartamento)" class="bg-yellow-400">Editar</button>
+              <button (click)="deleteDepartamento(departamento.id)" class="bg-red-500 text-white">Eliminar</button>
             </td>
           </tr>
         </tbody>

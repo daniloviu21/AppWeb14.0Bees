@@ -74,9 +74,9 @@
     cursor: pointer;
     font-weight: bold;
     font-family: Arial, sans-serif;
-    transition: background-color 0.3s;
-    background-color: #1F263E;
-    color: white;
+    transition: background-color a0.3s;
+    /* background-color: #1F263E; */
+    /* color: white; */
 }
 
 

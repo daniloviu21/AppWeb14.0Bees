@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { ClientesService } from '../services/clientes.service';
+import { PedidosService } from '../services/pedidos.service';
 
 interface Pedido {
   id: number;
@@ -64,12 +66,35 @@ export class DashboardComponent implements OnInit {
   payments: Payment[] = [];
   transactions: Transaction[] = [];
 
+  pedidoos = [
+    { id: 1, idcliente: 0, nombreCliente: ' ', total: 1500, estado: 'Pendiente', fecha: '' },
+    { id: 2, idcliente: 0, nombreCliente: ' ', total: 2500, estado: 'Enviado', fecha: '' },
+    { id: 3, idcliente: 0, nombreCliente: ' ', total: 1800, estado: 'Entregado', fecha: '' }
+  ];
+
+  clientes = [
+    {
+      id: 0,
+      nombrecliente: ' '
+
+    }
+  ];
+
+  constructor(
+        private pedidoService: PedidosService,
+        private clienteService: ClientesService
+  ){
+
+  }
+
   ngOnInit() {
     this.cargarDatos();
     this.cargarCalendarioEntregas();
     this.cargarOrders();
     this.cargarPayments();
     this.cargarTransactions();
+
+
   }
 
   cargarDatos() {
@@ -117,6 +142,29 @@ export class DashboardComponent implements OnInit {
         estadoPedidoClase: 'processing'
       }
     ];
+
+    this.pedidoService.getPedidos().subscribe({
+      next: (data) => {
+        this.pedidoos = data;
+        console.log(this.pedidoos);
+      },
+      error: (error) => {
+        console.error('Error al obtener pedidos:', error);
+      }
+    }); 
+
+    this.clienteService.getClientes().subscribe({
+      next: (data) => {
+        this.clientes = data;
+        for(var i = 0; i < this.pedidoos.length; i++){
+          this.pedidoos[i].nombreCliente = this.clientes.find(cliente => cliente.id === this.pedidoos[i].idcliente)!.nombrecliente;
+        }
+        console.log(this.clientes);
+      },
+      error: (error) => {
+        console.error('Error al obtener clientes:', error);
+      }
+    });
   }
 
   cargarCalendarioEntregas() {

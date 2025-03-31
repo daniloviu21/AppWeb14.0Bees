@@ -6,7 +6,7 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class DepartamentoService {
-  private apiUrl = 'http://82.29.197.167:3000/api-docs/#/Departamentos'; //api de departamento
+  private apiUrl = 'http://82.29.197.167:3000/api/departamentos'; //api de departamento
 
   constructor(private http: HttpClient) {}
 
